@@ -16,7 +16,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'sign up', component: SignUpComponent},
-  {path:'navbar', component: NavbarComponent},
+  // {path:'navbar', component: NavbarComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'analytics', component:AnalyticsComponent},
   {path: 'events', component:EventsComponent},

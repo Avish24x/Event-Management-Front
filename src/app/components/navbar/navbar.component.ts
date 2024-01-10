@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 declare var $: any;
 
@@ -9,38 +10,36 @@ declare var $: any;
 })
 export class NavbarComponent implements AfterViewInit {
 
+  constructor(private router: Router) {}
+
   ngAfterViewInit(): void {
-    const self = this; // Capture the reference to 'this'
+    // Initialize sidebar
+    this.initSidebar();
 
-    $(function () {
-      $(".sidebar-dropdown > a").click(function (this: HTMLElement) {
-        $(".sidebar-submenu").slideUp(200);
-        if (
-          $(this)
-            .parent()
-            .hasClass("active")
-        ) {
-          $(".sidebar-dropdown").removeClass("active");
-          $(this)
-            .parent()
-            .removeClass("active");
-        } else {
-          $(".sidebar-dropdown").removeClass("active");
-          $(this)
-            .next(".sidebar-submenu")
-            .slideDown(200);
-          $(this)
-            .parent()
-            .addClass("active");
-        }
-      });
+    // Highlight active link on component initialization
+    this.highlightActiveLink();
 
-      $("#close-sidebar").click(function (this: HTMLElement) {
-        $(".page-wrapper").removeClass("toggled");
-      });
-      $("#show-sidebar").click(function (this: HTMLElement) {
-        $(".page-wrapper").addClass("toggled");
-      });
+    // Subscribe to router events to update the active link on route changes
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.highlightActiveLink();
+      }
     });
+  }
+
+  initSidebar(): void {
+    $("#close-sidebar").click(() => {
+      $(".page-wrapper").removeClass("toggled");
+    });
+
+    $("#show-sidebar").click(() => {
+      $(".page-wrapper").addClass("toggled");
+    });
+  }
+
+  highlightActiveLink(): void {
+    $(".sidebar-dropdown").removeClass("active");
+    const currentRoute = this.router.url;
+    $(`.sidebar-dropdown a[href='${currentRoute}']`).parent().addClass("active");
   }
 }

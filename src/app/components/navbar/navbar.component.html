@@ -14,7 +14,7 @@
         </div>
         <div class="sidebar-header">
           <div class="user-pic">
-            <img class="rounded-circle" src="assets/images/user3.jpg" alt="User picture" style="width: 55px; height: 55px;">
+            <img class="rounded-circle" src="assets/images/only.jpg" alt="User picture" style="width: 55px; height: 55px;">
           </div>
           <div class="user-info">
             <span class="user-name">Milesh
@@ -22,7 +22,7 @@
             </span>
             <span class="user-role">Administrator</span>
             <span class="user-status">
-                <i class="bi bi-person-circle"></i>
+                <i class="bi bi-person-circle" ></i>
 
               <span>Online</span>
             </span>
@@ -48,47 +48,48 @@
               <span>General</span>
             </li>
 
-            <li class="sidebar-dropdown">
-              <a href="/dashboard">
+            <li class="sidebar-dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <a [routerLink]="['/dashboard']">
                 <i class="bi bi-person-fill px-2 py-2"></i>
                 <span>Dashboard</span>
               </a>
             </li>
-
-            <!-- analytics -->
-            <li class="sidebar-dropdown">
-              <a href="/analytics">
+            
+            <!-- Repeat the above structure for other links in your navbar -->
+            <li class="sidebar-dropdown" routerLinkActive="active">
+              <a [routerLink]="['/analytics']">
                 <i class="bi bi-bar-chart-fill px-2 py-2"></i>
                 <span>Analytics</span>
-               </a>
+              </a>
             </li>
             
-            
-            <li class="sidebar-dropdown">
-              <a href="/events">
+            <!-- Example for "events" -->
+            <li class="sidebar-dropdown" routerLinkActive="active">
+              <a [routerLink]="['/events']">
                 <i class="bi bi-table px-2 py-2"></i>
                 <span>Events</span>
               </a>
-              
             </li>
+            
             <li class="header-menu">
               <span>Extra</span>
             </li>
-            <li>
-              <a href="/group-leaders">
+            <li class="sidebar-dropdown" routerLinkActive="active">
+              <a [routerLink]="['/group-leaders']">
                 <i class="bi bi-people py-2 px-2"></i>
                 <span>Group Leaders</span>
-                
               </a>
             </li>
-            <li>
-              <a href="/team-leaders">
+            
+            <li class="sidebar-dropdown" routerLinkActive="active">
+              <a [routerLink]="['/team-leaders']">
                 <i class="bi bi-person-vcard-fill px-2 py-2"></i>
                 <span>Team Leaders</span>
               </a>
             </li>
-            <li>
-              <a href="/reports">
+            
+            <li class="sidebar-dropdown" routerLinkActive="active">
+              <a [routerLink]="['/reports']">
                 <i class="fa fa-folder"></i>
                 <span>Generate Reports</span>
               </a>
@@ -99,22 +100,22 @@
       </div>
       <!-- sidebar-content -->
       <div class="sidebar-footer">
-        <a href="/notification">
+        <a [routerLink]="['/notification']" routerLinkActive="active">
           <i class="fa fa-bell"></i>
           <span class="badge bg-warning notification">3</span>
         </a>
-        
-        <a href="/settings">
+      
+        <a [routerLink]="['/settings']" routerLinkActive="active">
           <i class="fa fa-cog"></i>
-          
         </a>
-        <a href="/logout">
+      
+        <a [routerLink]="['/logout']" routerLinkActive="active">
           <i class="fa fa-power-off"></i>
         </a>
       </div>
     </nav>
     <!-- sidebar-wrapper -->
-    <main class="page-content">
+    <!-- <main class="page-content">
       <div class="container-fluid">
         <h2>Event Management</h2>
         <hr>
@@ -122,13 +123,13 @@
           <div class="form-group col-md-12">
             
             <div class="page-wrapper chiller-theme toggled">
-                <!-- Sidebar content here -->
+               
             
                 <main class="page-content">
                   <div class="container-fluid">
                     <h2>Calender</h2>
                     <hr>
-                    <!-- Add your calendar component selector here -->
+                    
                     <hr>
                   </div>
                 </main>
@@ -140,6 +141,10 @@
         <hr>
        
       </div>
-    </main>
+    </main> -->
+    <div class="content-wrapper">
+      <!-- Router outlet to display the routed components -->
+      <router-outlet></router-outlet>
+    </div>
   </div>
   
