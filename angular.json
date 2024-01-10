@@ -30,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.scss",
+              "node_modules/@sdworx/sdwds-styling/css/themes/default/main.min.css",
+              "node_modules/@sdworx/sdwds-icons/css/main.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -100,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cb1abcbd-3731-4077-8356-7ae1747fa7a3"
   }
 }
