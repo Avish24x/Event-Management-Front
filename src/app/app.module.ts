@@ -16,6 +16,12 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import {ChartModule } from 'angular2-chartjs';
+import { ChartsComponent } from './components/charts/charts.component';
+import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,12 +38,16 @@ import { LogoutComponent } from './components/logout/logout.component';
     ReportsComponent,
     NotificationComponent,
     SettingsComponent,
-    LogoutComponent
+    LogoutComponent,
+    ChartsComponent,
+    AnalyticsChartsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
