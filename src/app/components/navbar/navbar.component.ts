@@ -1,5 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 declare var $: any;
 
@@ -8,23 +8,30 @@ declare var $: any;
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit, OnInit {
 
-  constructor(private router: Router) {}
+  isNavbarHidden = false;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit() {
+    // Initial check for visibility
+    this.toggleNavbarVisibility();
+
+    // Subscribe to route changes
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Check for visibility on route change
+        this.toggleNavbarVisibility();
+        // Highlight active link
+        this.highlightActiveLink();
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     // Initialize sidebar
     this.initSidebar();
-
-    // Highlight active link on component initialization
-    this.highlightActiveLink();
-
-    // Subscribe to router events to update the active link on route changes
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.highlightActiveLink();
-      }
-    });
   }
 
   initSidebar(): void {
@@ -41,5 +48,14 @@ export class NavbarComponent implements AfterViewInit {
     $(".sidebar-dropdown").removeClass("active");
     const currentRoute = this.router.url;
     $(`.sidebar-dropdown a[href='${currentRoute}']`).parent().addClass("active");
+  }
+
+  toggleNavbarVisibility(): void {
+    // Check if the current route is a login or signup page
+    const isLoginPage = this.router.url.includes('login');
+    const isSignUpPage = this.router.url.includes('sign%20up'); // Updated to match the encoded space
+
+    // Hide the navbar on login and signup pages, show it otherwise
+    this.isNavbarHidden = isLoginPage || isSignUpPage;
   }
 }
