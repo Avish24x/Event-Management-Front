@@ -23,14 +23,16 @@ export class AnalyticsChartsComponent implements AfterViewInit {
       type: 'pie',
     },
     title: {
-      text: 'Highcharts Pie Chart'
+      text: 'Event Management Program'
     },
+    colors: ['#e94e0f','#870b58','#e4003a','#f8ad07'],
     series: [{
       name: 'Highcharts Pie Chart',
       data: [
-        ['Category 1', 30],
-        ['Category 2', 50],
+        ['Fun@Worx', 30],
+        ['Category 2', 40],
         ['Category 3', 20],
+        ['Category 4', 10]
       ]
     }] as Highcharts.SeriesOptionsType[],
     plotOptions: {
@@ -50,6 +52,7 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     title: {
       text: 'Highcharts Bar Chart'
     },
+    
     xAxis: {
       categories: ['Label 1', 'Label 2', 'Label 3']
     },
@@ -60,7 +63,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     },
     series: [{
       name: 'Highcharts Bar Chart',
-      data: [10, 20, 30]
+      data: [100, 20, 30],
+      
     }] as Highcharts.SeriesOptionsType[],
     plotOptions: {
       series: {
