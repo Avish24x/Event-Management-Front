@@ -17,10 +17,10 @@ import { NotificationComponent } from './components/notification/notification.co
 import { SettingsComponent } from './components/settings/settings.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import {ChartModule } from 'angular2-chartjs';
+
 import { ChartsComponent } from './components/charts/charts.component';
 import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
-
+import {HighchartsChartModule} from 'highcharts-angular';
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import { AnalyticsChartsComponent } from './components/analytics-charts/analytic
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ChartModule,
+    HighchartsChartModule,
     FullCalendarModule
   ],
   providers: [],
