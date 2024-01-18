@@ -21,6 +21,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { ChartsComponent } from './components/charts/charts.component';
 import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
 import {HighchartsChartModule} from 'highcharts-angular';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {HighchartsChartModule} from 'highcharts-angular';
     SettingsComponent,
     LogoutComponent,
     ChartsComponent,
-    AnalyticsChartsComponent
+    AnalyticsChartsComponent,
+    EventDisplayComponent
   ],
   imports: [
     BrowserModule,

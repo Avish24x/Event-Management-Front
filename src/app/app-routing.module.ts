@@ -12,6 +12,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'reports', component:ReportsComponent},
   {path: 'notification', component:NotificationComponent},
   {path: 'settings', component:SettingsComponent},
-  {path: 'logout', component:LogoutComponent}
+  {path: 'logout', component:LogoutComponent},
+  {path: 'event-display', component:EventDisplayComponent}
 
 
 
