@@ -14,6 +14,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FinanceComponent } from './components/financial/finance.component';
 import { CommunicationComponent } from './components/communication/communication.component';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'notification', component:NotificationComponent},
   {path: 'settings', component:SettingsComponent},
   {path: 'logout', component:LogoutComponent},
+  {path: 'event-display', component:EventDisplayComponent},
 
   {path: 'finance', component:FinanceComponent},
   {path: 'communication', component:CommunicationComponent}

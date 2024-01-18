@@ -24,6 +24,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { ChartsComponent } from './components/charts/charts.component';
 import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
 import {HighchartsChartModule} from 'highcharts-angular';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 
 
@@ -46,6 +47,7 @@ import { CommunicationComponent } from './components/communication/communication
     ChartsComponent,
     FinanceComponent,
     AnalyticsChartsComponent,
+    EventDisplayComponent,
     CommunicationComponent
   ],
   imports: [
