@@ -1,5 +1,5 @@
-// finance.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { FinanceComponent } from './finance.component';
 
 describe('FinanceComponent', () => {
@@ -8,9 +8,9 @@ describe('FinanceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FinanceComponent],
+      declarations: [ FinanceComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {
