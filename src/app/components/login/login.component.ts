@@ -33,6 +33,7 @@ export class LoginComponent {
       console.log('Form submitted:', this.loginForm.value);
     } else {
       console.log('Form has validation errors');
+      this.loginForm.get('password')?.markAsTouched();
     }
   }
 }
