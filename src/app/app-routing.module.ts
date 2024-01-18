@@ -16,6 +16,7 @@ import { FinanceComponent } from './components/financial/finance.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 
+
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'sign up', component: SignUpComponent},
@@ -40,5 +41,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

@@ -61,3 +61,4 @@ import { CommunicationComponent } from './components/communication/communication
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
