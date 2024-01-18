@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Chart, { ChartTypeRegistry } from 'chart.js/auto';
+import Chart, { ChartTypeRegistry, Point } from 'chart.js/auto';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-finance',
@@ -60,7 +61,9 @@ export class FinanceComponent implements OnInit {
     const ctx = document.getElementById(canvasId) as HTMLCanvasElement;
     if (!ctx) return;
 
-    new Chart(ctx, {
+    let chart: Chart<keyof ChartTypeRegistry, (number | [number, number] | Point | null)[]> | undefined;
+
+    chart = new Chart(ctx, {
       type: type,
       data: {
         labels: labels,
@@ -78,8 +81,33 @@ export class FinanceComponent implements OnInit {
         scales: {
           x: { beginAtZero: true },
           y: { beginAtZero: true }
-        }
+        },
+        onClick: (event) => this.downloadData(chart!, label, labels, data, event)
       }
     });
+  }
+
+  downloadData(chart: Chart<keyof ChartTypeRegistry, (number | [number, number] | Point | null)[]>, fileName: string, labels: string[], data: number[], event: any) {
+    const activePoints = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, false);
+    
+    if (activePoints.length === 0) return;
+
+    const dataIndex = activePoints[0].index;
+
+    // Creating an array of arrays for XLSX
+    const xlsData = [['Label', 'Data']];
+    labels.forEach((label, index) => {
+      xlsData.push([label, data[index].toString()]);
+    });
+
+    // Creating a worksheet
+    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(xlsData);
+
+    // Creating a workbook
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    // Saving the workbook
+    XLSX.writeFile(wb, `${fileName}_Data.xlsx`);
   }
 }
