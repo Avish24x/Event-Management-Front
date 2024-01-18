@@ -12,6 +12,9 @@ import { EventsComponent } from './components/events/events.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
 import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
+
+import { FinanceComponent } from './components/financial/finance.component';
+
 import { ReportsComponent } from './components/reports/reports.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -22,6 +25,7 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
 import {HighchartsChartModule} from 'highcharts-angular';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
+import { CommunicationComponent } from './components/communication/communication.component';
 
 
 @NgModule({
@@ -41,8 +45,10 @@ import { EventDisplayComponent } from './components/event-display/event-display.
     SettingsComponent,
     LogoutComponent,
     ChartsComponent,
+    FinanceComponent,
     AnalyticsChartsComponent,
-    EventDisplayComponent
+    EventDisplayComponent,
+    CommunicationComponent
   ],
   imports: [
     BrowserModule,
