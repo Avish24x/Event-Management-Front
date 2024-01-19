@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -26,6 +26,7 @@ import { AnalyticsChartsComponent } from './components/analytics-charts/analytic
 import {HighchartsChartModule} from 'highcharts-angular';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { CommunicationComponent } from './components/communication/communication.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -48,14 +49,16 @@ import { CommunicationComponent } from './components/communication/communication
     FinanceComponent,
     AnalyticsChartsComponent,
     EventDisplayComponent,
-    CommunicationComponent
+    CommunicationComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HighchartsChartModule,
-    FullCalendarModule
+    FullCalendarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
