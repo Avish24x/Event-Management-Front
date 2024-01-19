@@ -64,3 +64,4 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -1,1 +1,15 @@
-<p>communication works!</p>
+<div class="communication-dashboard">
+    <h2>Support Tickets</h2>
+  
+    <div *ngFor="let ticket of supportTickets" class="ticket">
+      <p><strong>{{ ticket.sender }}</strong>: {{ ticket.message }}</p>
+      <button (click)="markAsUrgent(ticket)">Mark as Urgent</button>
+    </div>
+  
+    <h2>Urgent Messages for Group Leaders</h2>
+  
+    <div *ngFor="let message of urgentMessages" class="urgent-message">
+      <p><strong>{{ message.sender }}</strong>: {{ message.message }}</p>
+    </div>
+  </div>
+  
