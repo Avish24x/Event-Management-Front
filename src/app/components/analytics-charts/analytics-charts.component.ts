@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import * as Highcharts from 'highcharts';
-
+import HC_exporting from 'highcharts/modules/exporting';
+import HC_exportData from 'highcharts/modules/export-data';
 
 @Component({
   selector: 'app-analytics-charts',
@@ -202,6 +203,10 @@ export class AnalyticsChartsComponent implements AfterViewInit {
   runOutsideAngular: boolean = false; // optional boolean, defaults to false
 
   ngAfterViewInit() {
+    // Initialize the exporting module
+    HC_exporting(Highcharts);
+    HC_exportData(Highcharts);
+
     // Create the pie chart
     this.createHighchartsChart(this.highchartsPieChartRef, this.pieChartOptions);
 
@@ -223,6 +228,22 @@ export class AnalyticsChartsComponent implements AfterViewInit {
 
   private createHighchartsChart(chartRef: ElementRef, options: Highcharts.Options) {
     const ctx = (chartRef.nativeElement as HTMLDivElement).querySelector('.chart-container') as HTMLElement;
-    new Highcharts.Chart(ctx, options);
+    const chart = new Highcharts.Chart(ctx, options);
+
+    // Add a click event to the chart to trigger the download
+    if (chart.options && chart.options.chart) {
+      chart.options.chart.events = {
+        click: function () {
+          // Handle click event, e.g., show a menu or trigger the download
+          const exportOptions: Highcharts.ExportingOptions = {
+            type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' as Highcharts.ExportingMimeTypeValue,
+            filename: 'chart-export',
+          };
+
+          // Use exportChart method directly with correct type for options
+          Highcharts.Chart.prototype.exportChart.call(chart, exportOptions, {});
+        }
+      };
+    }
   }
 }
