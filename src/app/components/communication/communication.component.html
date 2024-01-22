@@ -1,15 +1,19 @@
-<div class="communication-dashboard">
-    <h2>Support Tickets</h2>
+<!-- communication.component.html -->
+<!-- app.component.html or the relevant parent component -->
+<!-- navbar.component.html or wherever the link is -->
+<a routerLink="/communication">Communication</a>
+
+<!-- app.component.html or the relevant parent component -->
+<router-outlet></router-outlet>
+
+
+<div class="chat-box">
   
-    <div *ngFor="let ticket of supportTickets" class="ticket">
-      <p><strong>{{ ticket.sender }}</strong>: {{ ticket.message }}</p>
-      <button (click)="markAsUrgent(ticket)">Mark as Urgent</button>
-    </div>
-  
-    <h2>Urgent Messages for Group Leaders</h2>
-  
-    <div *ngFor="let message of urgentMessages" class="urgent-message">
-      <p><strong>{{ message.sender }}</strong>: {{ message.message }}</p>
-    </div>
+  <div *ngFor="let message of messages" class="message {{ message.isAi ? 'ai' : 'user' }}">
+    {{ message.text }}
   </div>
-  
+  <div class="user-input">
+    <input [(ngModel)]="userInput" placeholder="Type your issue..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
