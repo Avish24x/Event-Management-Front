@@ -1,19 +1,51 @@
 <!-- communication.component.html -->
-<!-- app.component.html or the relevant parent component -->
-<!-- navbar.component.html or wherever the link is -->
-<a routerLink="/communication">Communication</a>
 
-<!-- app.component.html or the relevant parent component -->
-<router-outlet></router-outlet>
+<div class="data-grid-container">
+  <!-- Floating Filters -->
+  <div class="floating-filters">
+    <label for="ticketIdFilter">Ticket ID:</label>
+    <input type="text" id="ticketIdFilter" [(ngModel)]="filters.ticketId">
 
+    <label for="issuesEncounteredFilter">Issues Encountered:</label>
+    <input type="text" id="issuesEncounteredFilter" [(ngModel)]="filters.issuesEncountered">
 
-<div class="chat-box">
-  
-  <div *ngFor="let message of messages" class="message {{ message.isAi ? 'ai' : 'user' }}">
-    {{ message.text }}
+    <label for="departmentsFilter">Departments:</label>
+    <input type="text" id="departmentsFilter" [(ngModel)]="filters.departments">
+
+    <label for="severityFilter">Severity:</label>
+    <select id="severityFilter" [(ngModel)]="filters.severity">
+      <option value="">All</option>
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+    </select>
+
+    <!-- Add more filters as needed -->
+
+    <button (click)="applyFilters()">Apply Filters</button>
   </div>
-  <div class="user-input">
-    <input [(ngModel)]="userInput" placeholder="Type your issue..." />
-    <button (click)="sendMessage()">Send</button>
-  </div>
+
+  <!-- Data Grid -->
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Issues Encountered</th>
+        <th>Departments</th>
+        <th>Severity</th>
+        <th>Status</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of filteredTickets">
+        <td>{{ ticket.id }}</td>
+        <td>{{ ticket.issuesEncountered }}</td>
+        <td>{{ ticket.departments }}</td>
+        <td>{{ ticket.severity }}</td>
+        <td>{{ ticket.status }}</td>
+        <!-- Display other ticket data -->
+      </tr>
+    </tbody>
+  </table>
 </div>
