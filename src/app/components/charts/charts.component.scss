@@ -4,3 +4,52 @@
     margin: 20px auto;
   }
   
+  /* charts.component.scss */
+
+:host {
+  display: block;
+  margin: 20px;
+}
+
+.highcharts-chart-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Customize chart container styling if needed */
+/* .highcharts-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+} */
+
+.chart-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chart-wrapper {
+  margin-bottom: 20px;
+}
+
+/* Customize chart series colors if needed */
+.highcharts-series-0 {
+  fill: #3498db; /* Bar Chart */
+}
+
+.highcharts-series-1 {
+  stroke: #2ecc71; /* Line Chart */
+}
+
+.highcharts-series-2 {
+  fill: #e74c3c; /* Area Chart */
+}
+
+.highcharts-series-3 {
+  fill: #f39c12; /* Pie Chart */
+}
+
+.highcharts-series-4 {
+  fill: #9b59b6; /* Column Chart */
+}
