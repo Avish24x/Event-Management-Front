@@ -16,6 +16,12 @@ export class AnalyticsChartsComponent implements AfterViewInit {
   @ViewChild('highchartsScatterPlot') private highchartsScatterPlotRef!: ElementRef;
   @ViewChild('highchartsBubbleChart') private highchartsBubbleChartRef!: ElementRef;
 
+  // scrollToTop() {
+  //   console.log('Scrolling to top...');
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // }
+  
+
   Highcharts: typeof Highcharts = Highcharts; // required
   chartConstructor: string = 'chart'; // optional string, defaults to 'chart'
 

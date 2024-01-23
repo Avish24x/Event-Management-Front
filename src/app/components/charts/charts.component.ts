@@ -9,6 +9,10 @@ import * as Highcharts from 'highcharts';
 export class ChartsComponent implements AfterViewInit {
   @ViewChild('highchartsChart') private highchartsChartRef!: ElementRef;
 
+  scrollToTop() {
+    console.log('Scrolling to top...');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor: string = 'chart';
   updateFlag: boolean = false;
