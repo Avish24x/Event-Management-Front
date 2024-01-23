@@ -4,7 +4,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
-
 })
 export class SearchBarComponent {
   searchQuery: string = '';
@@ -13,5 +12,10 @@ export class SearchBarComponent {
 
   search() {
     this.searchEvent.emit(this.searchQuery);
+  }
+
+  // Function to scroll back to the top of the page
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

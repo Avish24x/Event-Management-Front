@@ -1,3 +1,13 @@
 .container {
     margin-left: 20em;
+    margin-top: 2em;
 }
+/* In your search-bar.component.scss or global styles */
+.btn-back-to-top {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+  }
+
+  
+  

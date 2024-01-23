@@ -1,12 +1,17 @@
-
 <div class="container">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchQuery" name="searchQuery">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" (click)="search()">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </div>
-      
+  <div class="input-group mb-3 align-items-center">
+    <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchQuery" name="searchQuery">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary btn-search" type="button" (click)="search()" data-toggle="tooltip" title="Search">
+        <i class="bi bi-search" style="color: #007bff;"></i>
+      </button>
+      <button class="btn btn-outline-secondary btn-support" type="button" data-toggle="tooltip" title="Assistance Support Chatbot">
+        <i class="bi bi-chat-dots" style="color: #28a745;"></i> <!-- Assuming the "bi-chat-dots" is the Bootstrap Icons chatbot icon -->
+      </button>
+      <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
+  <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
+  Back to Top
+</button>
+    </div>
+  </div>
 </div>
