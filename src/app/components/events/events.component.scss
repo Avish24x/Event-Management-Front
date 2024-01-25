@@ -1,3 +1,5 @@
+/* charts.component.scss */
+
 $primary-color: #3498db; // Customize the primary color
 
 .container {
@@ -7,6 +9,14 @@ $primary-color: #3498db; // Customize the primary color
     margin-left: 0;
     padding: 10px;
   }
+}
+
+.top-right-image {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
 }
 
 #calendar {

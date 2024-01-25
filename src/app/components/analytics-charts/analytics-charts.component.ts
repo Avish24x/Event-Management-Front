@@ -68,6 +68,7 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#f8ad07'],
     series: [{
       name: 'Highcharts Bar Chart',
       data: [100, 20, 30],
@@ -98,6 +99,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#870b58','#e4003a',],
+
     series: [{
       name: 'Highcharts Line Chart',
       data: [10, 20, 15, 25, 30]
@@ -127,6 +130,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#e4003a'],
+
     series: [{
       name: 'Highcharts Area Chart',
       data: [10, 20, 15, 25, 30]
@@ -158,6 +163,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Y-Axis'
       }
     },
+    colors: ['#e94e0f'],
+
     series: [{
       name: 'Highcharts Scatter Plot',
       data: [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30]]

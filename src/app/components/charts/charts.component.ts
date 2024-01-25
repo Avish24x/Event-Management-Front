@@ -33,6 +33,7 @@ export class ChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#e94e0f'],
     series: [{
       name: 'Bar Chart',
       type: 'bar', // Specify the chart type
@@ -56,6 +57,7 @@ export class ChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#870b58'],
     series: [{
       name: 'Line Chart',
       type: 'line', // Specify the chart type
@@ -79,6 +81,7 @@ export class ChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#e4003a',],
     series: [{
       name: 'Area Chart',
       type: 'area', // Specify the chart type
@@ -94,6 +97,7 @@ export class ChartsComponent implements AfterViewInit {
     title: {
       text: 'Highcharts Pie Chart'
     },
+    colors: ['#e94e0f','#870b58','#e4003a','#f8ad07'],
     series: [{
       name: 'Pie Chart',
       type: 'pie', // Specify the chart type
@@ -122,6 +126,7 @@ export class ChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#f8ad07'],
     series: [{
       name: 'Column Chart',
       type: 'column', // Specify the chart type
