@@ -9,6 +9,7 @@ export class SearchBarComponent {
   searchQuery: string = '';
   isClosed: boolean = true;
   isExpanded: boolean = false;
+  isProfileDropdownOpen: boolean = false; // Add this line
 
   @Output() searchEvent = new EventEmitter<string>();
 
@@ -26,14 +27,15 @@ export class SearchBarComponent {
   }
 
   onClose() {
-    // Placeholder: Implement logic to close or clean up resources here
-    // For example, set isClosed to true or perform necessary actions
     this.isClosed = true;
   }
 
   onClick() {
-    // Placeholder: Implement logic for handling suggestions here
-    // For example, toggle the isExpanded state or perform specific actions
     this.isExpanded = !this.isExpanded;
+  }
+
+  // Toggle Profile Dropdown
+  toggleProfileDropdown() {
+    this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
   }
 }

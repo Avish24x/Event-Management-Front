@@ -3,25 +3,57 @@
     <!-- Search Bar Code -->
     <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary btn-search" type="button" (click)="search()" data-toggle="tooltip" title="Search">
+      <!-- Modify the Search Button -->
+      <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
         <i class="bi bi-search" style="color: #007bff;"></i>
       </button>
-      <!-- Support Chatbot Button -->
-      <button class="btn btn-outline-secondary btn-support" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
+      <!-- Modify the Support Button -->
+      <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
         <i class="bi bi-chat-dots" style="color: #28a745;"></i>
       </button>
+
+
+      <!-- Within your existing code, add a new button for the profile dropdown -->
+<button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+  <i class="far fa-user"></i>
+</button>
+
+<!-- Add a new section for the profile dropdown menu -->
+<div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
+  <ul class="dropdown__list">
+    <li class="dropdown__list-item">
+      <span class="dropdown__icon"><i class="far fa-user"></i></span>
+      <span class="dropdown__title">My Profile</span>
+    </li>
+    <li class="dropdown__list-item">
+      <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
+      <span class="dropdown__title">My Account</span>
+    </li>
+    <li class="dropdown__list-item">
+      <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+      <span class="dropdown__title">Log Out</span>
+    </li>
+  </ul>
+</div>
+
+      
       <!-- Back to Top Button -->
       <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
         <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
         Back to Top
       </button>
     </div>
+    <!-- ... rest of the code ... -->
+  </div>
+</div>
+
     <!-- Chatbox Code -->
     <div *ngIf="!isClosed" class="chatbox">
       <div class="chat-header">
         <div class="chat-header-content">
           <span class="avatar">
-            <img src="assets/images/only.jpg" alt="Avatar image or a picture of a person" />
+            <!-- Add max-width and max-height styles to the image -->
+            <img src="assets/images/user3.jpg" alt="Avatar image or a picture of a person" style="max-width: 50px; max-height: 50px;" />
           </span>
           <span class="label">Noor</span>
         </div>
@@ -100,5 +132,4 @@
         </button>
       </div>
     </div>
-  </div>
-</div>
+ 
