@@ -8,55 +8,55 @@ import { Event } from '../../model/event.model'
 export class EventDisplayComponent {
   events: Event[] = [
     {
-      title: 'Event 1',
+      title: 'Fun @ Worx',
       description: 'we are here to make you have a good time...',
       date: 'Jan 19, 2024',
       imageUrl: 'assets/images/gaming.jpg'
     },
     {
-      title: 'Event 2',
+      title: 'HR Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/donation.jpg'
     },
     {
-      title: 'Event 3',
+      title: 'Payback Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/fun.jpg'
     },
     {
-      title: 'Event 4',
+      title: 'Fun @ Worx',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/sharingiscaring.jpg'
     },
     {
-      title: 'Event 5',
+      title: 'HR Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/bg.jpg'
     },
     {
-      title: 'Event 6',
+      title: 'Payback Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/guitar.jpg'
     },
     {
-      title: 'Event 7',
+      title: 'Fun @ Worx',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/hiking.jpg'
     },
     {
-      title: 'Event 8',
+      title: 'HR Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/press.jpg'
     },
     {
-      title: 'Event 9',
+      title: 'Payback Team',
       description: 'Description for Event 1...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/bg.jpg'
