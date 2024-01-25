@@ -26,7 +26,7 @@ export class ChartsComponent implements AfterViewInit {
       text: 'Highcharts Bar Chart'
     },
     xAxis: {
-      categories: ['Label 1', 'Label 2', 'Label 3']
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
     },
     yAxis: {
       title: {
@@ -98,10 +98,10 @@ export class ChartsComponent implements AfterViewInit {
       name: 'Pie Chart',
       type: 'pie', // Specify the chart type
       data: [
-        ['Category 1', 30],
-        ['Category 2', 40],
-        ['Category 3', 20],
-        ['Category 4', 10]
+        ['Fun@Worx', 30],
+        ['HR Team', 40],
+        ['Payback Team', 20],
+        ['SD Trails', 10]
       ]
     }]
   };
@@ -115,7 +115,7 @@ export class ChartsComponent implements AfterViewInit {
       text: 'Highcharts Column Chart'
     },
     xAxis: {
-      categories: ['Label 1', 'Label 2', 'Label 3']
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
     },
     yAxis: {
       title: {

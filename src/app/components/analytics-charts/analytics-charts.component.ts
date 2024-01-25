@@ -37,9 +37,9 @@ export class AnalyticsChartsComponent implements AfterViewInit {
       name: 'Highcharts Pie Chart',
       data: [
         ['Fun@Worx', 30],
-        ['Category 2', 40],
-        ['Category 3', 20],
-        ['Category 4', 10]
+        ['HR Team', 40],
+        ['Payback Team', 20],
+        ['SD Trails', 10]
       ]
     }] as Highcharts.SeriesOptionsType[],
     plotOptions: {
@@ -61,7 +61,7 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     },
     
     xAxis: {
-      categories: ['Label 1', 'Label 2', 'Label 3']
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
     },
     yAxis: {
       title: {
