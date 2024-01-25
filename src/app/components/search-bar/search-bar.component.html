@@ -51,11 +51,18 @@
     <div *ngIf="!isClosed" class="chatbox">
       <div class="chat-header">
         <div class="chat-header-content">
-          <span class="avatar">
+          <!-- <span class="avatar"> -->
             <!-- Add max-width and max-height styles to the image -->
-            <img src="assets/images/user3.jpg" alt="Avatar image or a picture of a person" style="max-width: 50px; max-height: 50px;" />
-          </span>
-          <span class="label">Noor</span>
+            <!-- <img src="assets/images/user3.jpg" alt="Avatar image or a picture of a person" style="max-width: 50px; max-height: 50px;" />
+          </span> -->
+
+          <div class="placeholder-glow btn-lg">
+            <!-- <span class="avatar w-128 avatar-primary"></span> -->
+            <i class="icons8-o-contacts btn-lg "></i>
+            
+          </div>
+          <span class="label"><strong>Abdurrahman Gurib</strong></span>
+
         </div>
         <div>
           <button class="btn btn-link" (click)="onClose()">
