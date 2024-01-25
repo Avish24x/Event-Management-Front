@@ -7,6 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class SearchBarComponent {
   searchQuery: string = '';
+  isClosed: boolean = true;
+  isExpanded: boolean = false;
 
   @Output() searchEvent = new EventEmitter<string>();
 
@@ -14,8 +16,24 @@ export class SearchBarComponent {
     this.searchEvent.emit(this.searchQuery);
   }
 
-  // Function to scroll back to the top of the page
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Toggle Chatbox
+  toggleChatbox() {
+    this.isClosed = !this.isClosed;
+  }
+
+  onClose() {
+    // Placeholder: Implement logic to close or clean up resources here
+    // For example, set isClosed to true or perform necessary actions
+    this.isClosed = true;
+  }
+
+  onClick() {
+    // Placeholder: Implement logic for handling suggestions here
+    // For example, toggle the isExpanded state or perform specific actions
+    this.isExpanded = !this.isExpanded;
   }
 }

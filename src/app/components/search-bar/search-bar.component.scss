@@ -9,5 +9,66 @@
     right: 20px; /* Adjust as needed */
   }
 
+  /* Add your existing styles above if needed */
+
+.chatbox {
+    position: fixed;
+  bottom: 70px; /* Adjust this value to fit your layout */
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .chat-body {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .chat-suggestion {
+    padding: 10px;
+  }
+  
+  .suggestion-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #007bff;
+  }
+  
+  .suggestions {
+    padding-top: 10px;
+  }
+  
+  .chat-message-entry input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  /* Add more styles as needed */
+  
+  /* Example styling for input and button */
+  .chat-message-entry input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  /* You may need to adjust the styles based on your specific requirements */
+  
   
   

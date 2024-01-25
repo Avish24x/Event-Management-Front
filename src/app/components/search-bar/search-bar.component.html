@@ -1,17 +1,104 @@
 <div class="container">
   <div class="input-group mb-3 align-items-center">
-    <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchQuery" name="searchQuery">
+    <!-- Search Bar Code -->
+    <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary btn-search" type="button" (click)="search()" data-toggle="tooltip" title="Search">
         <i class="bi bi-search" style="color: #007bff;"></i>
       </button>
-      <button class="btn btn-outline-secondary btn-support" type="button" data-toggle="tooltip" title="Assistance Support Chatbot">
-        <i class="bi bi-chat-dots" style="color: #28a745;"></i> <!-- Assuming the "bi-chat-dots" is the Bootstrap Icons chatbot icon -->
+      <!-- Support Chatbot Button -->
+      <button class="btn btn-outline-secondary btn-support" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
+        <i class="bi bi-chat-dots" style="color: #28a745;"></i>
       </button>
+      <!-- Back to Top Button -->
       <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
-  <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
-  Back to Top
-</button>
+        <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
+        Back to Top
+      </button>
+    </div>
+    <!-- Chatbox Code -->
+    <div *ngIf="!isClosed" class="chatbox">
+      <div class="chat-header">
+        <div class="chat-header-content">
+          <span class="avatar">
+            <img src="assets/images/only.jpg" alt="Avatar image or a picture of a person" />
+          </span>
+          <span class="label">Noor</span>
+        </div>
+        <div>
+          <button class="btn btn-link" (click)="onClose()">
+            <i class="icons8-o-close"></i>
+          </button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="chat-body">
+        <!-- Chat Body Content -->
+
+        <div class="chat-message-list scrollable sd-scrollbar" style="height: 411px">
+          <div class="conversation-date">01 January 2023</div>
+          <div class="message-sent">
+            <div class="message-content">
+              <div class="message">Message Hi Noor</div>
+              <div class="time-sent">13.00</div>
+            </div>
+          </div>
+          <div class="message-sent">
+            <div class="message-content">
+              <div class="message">How can I help you?</div>
+              <div class="time-sent">13.00</div>
+            </div>
+          </div>
+          <div class="message-receive">
+            <div class="message-content">
+              <div class="message">I got issues in registering for Fun at Worx event</div>
+              <div class="time-wrapper">
+                <div class="time-sent">13:00</div>
+                <i class="icons8-f-ok"></i>
+              </div>
+            </div>
+          </div>
+          <div class="message-sent">
+            <div class="message-content">
+              <div class="message">Your query is safely registered, we will get back to you </div>
+              <div class="time-sent">13.00</div>
+            </div>
+          </div>
+          <div class="conversation-date">02 January 2023</div>
+          <div class="message-receive">
+            <div class="message-content">
+              <div class="message">Message</div>
+              <div class="time-wrapper">
+                <div class="time-sent">13:00</div>
+                <i class="icons8-o-ok"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="divider"></div>
+      <div class="chat-suggestion">
+        <div class="suggestion-title" (click)="onClick()">
+          <i [ngClass]="{ 'icons8-o-collapse-arrow': isExpanded, 'icons8-o-expand-arrow': !isExpanded }"></i>
+          <div class="label">suggestions</div>
+        </div>
+        <div *ngIf="isExpanded" class="suggestions">
+          <div class="flex-columns gap-2">
+            <button class="btn btn-tertiary btn-sm">Page 404</button>
+            <button class="btn btn-tertiary btn-sm">Registration issues</button>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="chat-message-entry">
+        <div class="form-group">
+          <input type="text" class="form-control" id="txtTextMedium" placeholder="Your message" />
+        </div>
+        <button class="btn btn-primary">
+          <i class="icons8-o-sent"></i>
+        </button>
+      </div>
     </div>
   </div>
 </div>
