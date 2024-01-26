@@ -1,8 +1,13 @@
+<!-- charts.component.html -->
+
+<!-- Add image to the top right corner -->
+<img src="/assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 100px; height: auto;">
+
 <div class="container">
   <full-calendar [options]="calendarOptions" class="custom-calendar">
-      <ng-template #eventContent let-arg>
-          <b>{{arg.timeText}}</b>
-          <i>{{arg.event.title}}</i>
-      </ng-template>
+    <ng-template #eventContent let-arg>
+      <b>{{arg.timeText}}</b>
+      <i>{{arg.event.title}}</i>
+    </ng-template>
   </full-calendar>
 </div>

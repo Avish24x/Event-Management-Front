@@ -16,6 +16,12 @@ export class AnalyticsChartsComponent implements AfterViewInit {
   @ViewChild('highchartsScatterPlot') private highchartsScatterPlotRef!: ElementRef;
   @ViewChild('highchartsBubbleChart') private highchartsBubbleChartRef!: ElementRef;
 
+  // scrollToTop() {
+  //   console.log('Scrolling to top...');
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // }
+  
+
   Highcharts: typeof Highcharts = Highcharts; // required
   chartConstructor: string = 'chart'; // optional string, defaults to 'chart'
 
@@ -31,9 +37,9 @@ export class AnalyticsChartsComponent implements AfterViewInit {
       name: 'Highcharts Pie Chart',
       data: [
         ['Fun@Worx', 30],
-        ['Category 2', 40],
-        ['Category 3', 20],
-        ['Category 4', 10]
+        ['HR Team', 40],
+        ['Payback Team', 20],
+        ['SD Trails', 10]
       ]
     }] as Highcharts.SeriesOptionsType[],
     plotOptions: {
@@ -55,13 +61,14 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     },
     
     xAxis: {
-      categories: ['Label 1', 'Label 2', 'Label 3']
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
     },
     yAxis: {
       title: {
         text: 'Value'
       }
     },
+    colors: ['#f8ad07'],
     series: [{
       name: 'Highcharts Bar Chart',
       data: [100, 20, 30],
@@ -92,6 +99,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#870b58','#e4003a',],
+
     series: [{
       name: 'Highcharts Line Chart',
       data: [10, 20, 15, 25, 30]
@@ -121,6 +130,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#e4003a'],
+
     series: [{
       name: 'Highcharts Area Chart',
       data: [10, 20, 15, 25, 30]
@@ -152,6 +163,8 @@ export class AnalyticsChartsComponent implements AfterViewInit {
         text: 'Y-Axis'
       }
     },
+    colors: ['#e94e0f'],
+
     series: [{
       name: 'Highcharts Scatter Plot',
       data: [[5, 10], [10, 15], [15, 20], [20, 25], [25, 30]]

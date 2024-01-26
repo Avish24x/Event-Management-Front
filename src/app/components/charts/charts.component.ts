@@ -9,14 +9,45 @@ import * as Highcharts from 'highcharts';
 export class ChartsComponent implements AfterViewInit {
   @ViewChild('highchartsChart') private highchartsChartRef!: ElementRef;
 
-  Highcharts: typeof Highcharts = Highcharts; // required
-  chartConstructor: string = 'chart'; // optional string, defaults to 'chart'
-  chartOptions: Highcharts.Options = {
+  scrollToTop() {
+    console.log('Scrolling to top...');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  Highcharts: typeof Highcharts = Highcharts;
+  chartConstructor: string = 'chart';
+  updateFlag: boolean = false;
+
+  // Bar Chart
+  barChartOptions: Highcharts.Options = {
     chart: {
       type: 'bar',
     },
     title: {
       text: 'Highcharts Bar Chart'
+    },
+    xAxis: {
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
+    },
+    yAxis: {
+      title: {
+        text: 'Value'
+      }
+    },
+    colors: ['#e94e0f'],
+    series: [{
+      name: 'Bar Chart',
+      type: 'bar', // Specify the chart type
+      data: [10, 20, 30]
+    }]
+  };
+
+  // Line Chart
+  lineChartOptions: Highcharts.Options = {
+    chart: {
+      type: 'line',
+    },
+    title: {
+      text: 'Highcharts Line Chart'
     },
     xAxis: {
       categories: ['Label 1', 'Label 2', 'Label 3']
@@ -26,28 +57,84 @@ export class ChartsComponent implements AfterViewInit {
         text: 'Value'
       }
     },
+    colors: ['#870b58'],
     series: [{
-      name: 'Highcharts Bar Chart',
-      data: [10, 20, 30]
-    }] as Highcharts.SeriesOptionsType[], // Explicitly cast the series property
-    plotOptions: {
-      series: {
-        animation: {
-          duration: 1000, // Set the duration of the animation in milliseconds
-          easing: 'easeOutBounce' // Set the easing function for the animation
-        }
-      }
-    }
-  }; // required
-
-  chartCallback: Highcharts.ChartCallbackFunction = function (chart) {
-    // optional function, defaults to null
-    // You can add any additional logic or actions here
+      name: 'Line Chart',
+      type: 'line', // Specify the chart type
+      data: [30, 20, 10]
+    }]
   };
 
-  updateFlag: boolean = false; // optional boolean
-  oneToOneFlag: boolean = true; // optional boolean, defaults to false
-  runOutsideAngular: boolean = false; // optional boolean, defaults to false
+  // Area Chart
+  areaChartOptions: Highcharts.Options = {
+    chart: {
+      type: 'area',
+    },
+    title: {
+      text: 'Highcharts Area Chart'
+    },
+    xAxis: {
+      categories: ['Label 1', 'Label 2', 'Label 3']
+    },
+    yAxis: {
+      title: {
+        text: 'Value'
+      }
+    },
+    colors: ['#e4003a',],
+    series: [{
+      name: 'Area Chart',
+      type: 'area', // Specify the chart type
+      data: [5, 15, 25]
+    }]
+  };
+
+  // Pie Chart
+  pieChartOptions: Highcharts.Options = {
+    chart: {
+      type: 'pie',
+    },
+    title: {
+      text: 'Highcharts Pie Chart'
+    },
+    colors: ['#e94e0f','#870b58','#e4003a','#f8ad07'],
+    series: [{
+      name: 'Pie Chart',
+      type: 'pie', // Specify the chart type
+      data: [
+        ['Fun@Worx', 30],
+        ['HR Team', 40],
+        ['Payback Team', 20],
+        ['SD Trails', 10]
+      ]
+    }]
+  };
+
+  // Column Chart
+  columnChartOptions: Highcharts.Options = {
+    chart: {
+      type: 'column',
+    },
+    title: {
+      text: 'Highcharts Column Chart'
+    },
+    xAxis: {
+      categories: ['Fun@Worx', 'HR Team', 'Payback Team']
+    },
+    yAxis: {
+      title: {
+        text: 'Value'
+      }
+    },
+    colors: ['#f8ad07'],
+    series: [{
+      name: 'Column Chart',
+      type: 'column', // Specify the chart type
+      data: [25, 15, 30]
+    }]
+  };
+
+  constructor() {}
 
   ngAfterViewInit() {
     this.createHighchartsChart();
