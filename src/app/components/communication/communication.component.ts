@@ -1,53 +1,75 @@
 // communication.component.ts
-
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+interface SupportTicket {
+  id: number;
+  issuesEncountered: string;
+  departments: string;
+  status: string;
+  severity: number;
+}
 
 @Component({
   selector: 'app-communication',
   templateUrl: './communication.component.html',
-  styleUrls: ['./communication.component.scss'],
+  styleUrls: ['./communication.component.scss']
 })
 export class CommunicationComponent implements OnInit {
-  userInput: string = '';
-  messages: { text: string; isAi: boolean }[] = [];
 
-  private openaiApiKey = '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'; // Replace with your actual OpenAI API key
+  tickets: SupportTicket[] = [];
 
-  constructor(private http: HttpClient) {}
+  filteredTickets: SupportTicket[] = []; // Initial state is unfiltered
+  filters = {
+    ticketId: '',
+    issuesEncountered: '',
+    departments: '',
+    severity: ''
+    // Add more filters as needed
+  };
 
-  ngOnInit(): void {}
+  constructor() { }
 
-  async sendMessage() {
-    if (this.userInput.trim() === '') return;
-
-    // Add user message to the chat
-    this.messages.push({ text: this.userInput, isAi: false });
-
-    // Get AI response
-    this.getAIResponse(this.userInput).subscribe((response: any) => {
-      // Add AI response to the chat
-      this.messages.push({ text: response.choices[0].text.trim(), isAi: true });
-
-      // Clear user input
-      this.userInput = '';
-    });
+  ngOnInit(): void {
+    // Generate dummy data entries with departments and severity levels
+    this.tickets = this.generateDummyEventData(100);
+    this.filteredTickets = [...this.tickets]; // Initial state is unfiltered
   }
 
-  getAIResponse(userInput: string) {
-    const prompt = `User: ${userInput}\nAI:`;
-    const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions'; // Update with the appropriate endpoint
+  applyFilters(): void {
+    // Apply filters based on the filter values
+    this.filteredTickets = this.tickets.filter(ticket =>
+      ticket.id.toString().includes(this.filters.ticketId) &&
+      ticket.issuesEncountered.toLowerCase().includes(this.filters.issuesEncountered.toLowerCase()) &&
+      ticket.departments.toLowerCase().includes(this.filters.departments.toLowerCase()) &&
+      (this.filters.severity === '' || ticket.severity.toString() === this.filters.severity)
+      // Add more conditions for other filters
+    );
+  }
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.openaiApiKey}`,
-    });
+  private generateDummyEventData(count: number): SupportTicket[] {
+    const dummyEventData: SupportTicket[] = [];
 
-    const requestBody = {
-      prompt,
-      max_tokens: 100,
-    };
+    for (let i = 1; i <= count; i++) {
+      let department: string;
+      if (i % 3 === 0) {
+        department = 'Payback Team';
+      } else if (i % 3 === 1) {
+        department = 'HR Team';
+      } else {
+        department = 'Fun @ Worx';
+      }
 
-    return this.http.post(apiUrl, requestBody, { headers });
+      const severity = i % 3 + 1; // Severity levels 1, 2, 3
+
+      dummyEventData.push({
+        id: i,
+        issuesEncountered: `Issue ${i}`,
+        departments: department,
+        status: i % 2 === 0 ? 'Resolved' : 'Open',
+        severity: severity
+      });
+    }
+
+    return dummyEventData;
   }
 }
