@@ -75,6 +75,35 @@
         </div>
       </div>
       </div>
+  </div>
+  <div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="otpModalLabel">Verify OTP</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Enter the OTP sent to your registered device.</p>
+          <form [formGroup]="otpForm">
+            <div class="form-group">
+              <label for="otpInput">OTP:</label>
+              <input type="text" class="form-control" id="otpInput" formControlName="otp" required>
+            </div>
+            <div class="text-danger" *ngIf="otpForm.get('otp')?.hasError('required')">
+              OTP is required
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="verifyOTP()">Verify</button>
+        </div>
+      </div>
     </div>
+  </div>
+  
 </body>
 </html>
