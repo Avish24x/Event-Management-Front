@@ -27,6 +27,7 @@ import {HighchartsChartModule} from 'highcharts-angular';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ApiComponent } from './services/api/api.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     AnalyticsChartsComponent,
     EventDisplayComponent,
     CommunicationComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ApiComponent
   ],
   imports: [
     BrowserModule,
