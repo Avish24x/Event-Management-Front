@@ -9,15 +9,15 @@
       </button>
       <!-- Modify the Support Button -->
       <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
-        <i class="bi bi-chat-dots" style="color: #870b58;"></i>
+        <i class="bi bi-chat-dots" style="color: #28a745;"></i>
       </button>
-
-
+ 
+ 
       <!-- Within your existing code, add a new button for the profile dropdown -->
 <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
   <i class="far fa-user"></i>
 </button>
-
+ 
 <!-- Add a new section for the profile dropdown menu -->
 <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
   <ul class="dropdown__list">
@@ -35,8 +35,8 @@
     </li>
   </ul>
 </div>
-
-      
+ 
+     
       <!-- Back to Top Button -->
       <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
         <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
@@ -46,7 +46,7 @@
     <!-- ... rest of the code ... -->
   </div>
 </div>
-
+ 
     <!-- Chatbox Code -->
     <div *ngIf="!isClosed" class="chatbox">
       <div class="chat-header">
@@ -55,14 +55,14 @@
             <!-- Add max-width and max-height styles to the image -->
             <!-- <img src="assets/images/user3.jpg" alt="Avatar image or a picture of a person" style="max-width: 50px; max-height: 50px;" />
           </span> -->
-
+ 
           <div class="placeholder-glow btn-lg">
             <!-- <span class="avatar w-128 avatar-primary"></span> -->
             <i class="icons8-o-contacts btn-lg "></i>
-            
+           
           </div>
           <span class="label"><strong>Abdurrahman Gurib</strong></span>
-
+ 
         </div>
         <div>
           <button class="btn btn-link" (click)="onClose()">
@@ -73,7 +73,7 @@
       <div class="divider"></div>
       <div class="chat-body">
         <!-- Chat Body Content -->
-
+ 
         <div class="chat-message-list scrollable sd-scrollbar" style="height: 411px">
           <div class="conversation-date">01 January 2023</div>
           <div class="message-sent">
@@ -114,7 +114,7 @@
             </div>
           </div>
         </div>
-
+ 
       </div>
       <div class="divider"></div>
       <div class="chat-suggestion">
