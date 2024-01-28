@@ -52,7 +52,8 @@ import { ApiComponent } from './services/api/api.component';
     EventDisplayComponent,
     CommunicationComponent,
     SearchBarComponent,
-    ApiComponent
+    ApiComponent,
+    
   ],
   imports: [
     BrowserModule,
