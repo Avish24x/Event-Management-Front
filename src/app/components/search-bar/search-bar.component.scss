@@ -34,6 +34,9 @@
     }
     
   }
+  .label.label-white {
+    color: white !important; /* Add !important to override any other conflicting styles */
+  }
   
   // .notification-badge {
   //   position: absolute;
