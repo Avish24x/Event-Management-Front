@@ -5,21 +5,50 @@
     margin-left: 20em;
     margin-top: 2em;
   }
-  
-  .notification-badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
+  .btn {
+    position: relative; // Ensure relative positioning for absolute positioning of the badge
+    padding: 10px; // Remove default padding
+    border: none; // Remove default border
+    // background-color: transparent; // Transparent background
+    
+    img {
+      width: 32px; // Adjust width of the image
+      height: 32px; // Adjust height of the image
+      border-radius: 50%; // Make the image circular if needed
+      vertical-align: middle; // Align the image vertically within the button
+    }
+    
+    .notification-badge {
+      position: absolute; // Position the badge relative to the button
+      top: 0px; // Adjust vertical position
+      right: 1px; // Adjust horizontal position
+      background-color: #ea004d;
+      color: white;
+      border-radius: 50%; // Make it fully circular
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+    
   }
+  
+  // .notification-badge {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   background-color: red;
+  //   color: white;
+  //   border-radius: 50%;
+  //   width: 20px;
+  //   height: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   font-size: 12px;
+  // }
   
   // .btn-back-to-top {
   //   position: fixed;

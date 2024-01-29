@@ -4,22 +4,25 @@
     <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
     <div class="input-group-append">
       <!-- Search Button -->
-      <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
-        <i class="bi bi-search" style="color: #007bff;"></i>
-      </button>
+     
       <!-- Support Button -->
       <!-- <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
         <i class="bi bi-chat-dots" style="color: #870b58;"></i>
       </button> -->
       <!-- Profile Dropdown Button -->
-      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
-        <i class="far fa-user"></i>
+      <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
+        <img src="../../../assets/images/search0.jpg" alt="Search">
       </button>
-
-      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" >
-        <i class="fas fa-bell notification-icon"></i>
+      
+      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+        <img src="../../../assets/images/profile0.jpg" alt="My Profile">
+      </button>
+      
+      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification">
+        <img src="../../../assets/images/notification0.jpg" alt="My Notification">
         <span class="notification-badge">1</span>
       </button>
+      
       
 
       <!-- Add a new section for the profile dropdown menu -->
