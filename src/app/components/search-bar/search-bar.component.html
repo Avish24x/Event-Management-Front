@@ -1,23 +1,34 @@
 <div class="container">
   <div class="input-group mb-3 align-items-center">
-    <!-- Search Bar Code -->
+    <!-- Search Bar -->
     <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
     <div class="input-group-append">
-      <!-- Modify the Search Button -->
+      <!-- Search Button -->
+     
+      <!-- Support Button -->
+      <!-- <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
+        <i class="bi bi-chat-dots" style="color: #870b58;"></i>
+      </button> -->
+      <!-- Profile Dropdown Button -->
       <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
-        <i class="bi bi-search" style="color: #007bff;"></i>
+        <img src="../../../assets/images/search0.jpg" alt="Search">
       </button>
-      <!-- Modify the Support Button -->
-      <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
-        <i class="bi bi-chat-dots" style="color: #28a745;"></i>
+      
+      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+        <img src="../../../assets/images/profile0.jpg" alt="My Profile">
       </button>
- 
- 
+      
+      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification">
+        <img src="../../../assets/images/notification0.jpg" alt="My Notification">
+        <span class="notification-badge">1</span>
+      </button>
+
+
       <!-- Within your existing code, add a new button for the profile dropdown -->
 <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
   <i class="far fa-user"></i>
 </button>
- 
+
 <!-- Add a new section for the profile dropdown menu -->
 <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
   <ul class="dropdown__list">
@@ -35,15 +46,22 @@
     </li>
   </ul>
 </div>
- 
-     
+
+      
       <!-- Back to Top Button -->
-      <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
+      <!-- <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
         <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
         Back to Top
-      </button>
+      </button> -->
+    </div>
+    <!-- Circular Icon with Image for Chatbox -->
+    <div class="chat-icon" (click)="toggleChatbox()">
+      <img src="../../../assets/images/384 px.jpg" alt="Chat Icon" class="chat-icon-image">
+     
     </div>
     <!-- ... rest of the code ... -->
+
+
   </div>
 </div>
  
@@ -62,7 +80,7 @@
            
           </div>
           <span class="label"><strong>Abdurrahman Gurib</strong></span>
- 
+
         </div>
         <div>
           <button class="btn btn-link" (click)="onClose()">

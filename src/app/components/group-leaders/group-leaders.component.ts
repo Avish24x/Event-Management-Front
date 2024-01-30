@@ -10,40 +10,40 @@ import { Component } from '@angular/core';
 export class GroupLeadersComponent {
   leaders = [
     {
-      name: 'Leader 1',
+      name: 'Group Leader ',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.',
       expanded: false
     },
     {
-      name: 'Leader 2',
+      name: 'Vice-Leader ',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       expanded: false
     },
     // Add more leaders as needed
     {
-      name: 'Leader 2',
+      name: 'Treasury',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       expanded: false
     },
     {
-      name: 'Leader 2',
-      photo: '../../../assets/images/spark/03.png',
-      bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-      expanded: false
-    },
-
-    {
-      name: 'Leader 2',
+      name: 'Secretary',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       expanded: false
     },
 
     {
-      name: 'Leader 2',
+      name: 'Spokesperson',
+      photo: '../../../assets/images/spark/03.png',
+      bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+      expanded: false
+    },
+
+    {
+      name: 'Subject Matter Expert',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       expanded: false
