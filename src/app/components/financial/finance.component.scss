@@ -1,29 +1,12 @@
-// finance.component.scss
 .container {
   margin-left: 18em;
-}
-.finance-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.chart-container {
-  width: calc(45% - 20px);
-  margin: 0px 50px 10px 10px; /* Added a big margin on the left (50px), you can adjust the value as needed */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
+.chart {
+  width: 45%;
+  height: 400px;
+  margin-bottom: 20px;
 }

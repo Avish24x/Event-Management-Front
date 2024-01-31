@@ -1,5 +1,3 @@
-// group-leaders.component.ts
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,13 +8,13 @@ import { Component } from '@angular/core';
 export class GroupLeadersComponent {
   leaders = [
     {
-      name: 'Group Leader ',
+      name: 'Group Leader',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.',
       expanded: false
     },
     {
-      name: 'Vice-Leader ',
+      name: 'Vice-Leader',
       photo: '../../../assets/images/spark/03.png',
       bio: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       expanded: false
