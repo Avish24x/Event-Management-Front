@@ -28,6 +28,7 @@ import { EventDisplayComponent } from './components/event-display/event-display.
 import { CommunicationComponent } from './components/communication/communication.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ApiComponent } from './services/api/api.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ApiComponent } from './services/api/api.component';
     CommunicationComponent,
     SearchBarComponent,
     ApiComponent,
+    PagenotfoundComponent,
     
   ],
   imports: [

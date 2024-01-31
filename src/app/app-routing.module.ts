@@ -15,6 +15,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { FinanceComponent } from './components/financial/finance.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: 'event-display', component:EventDisplayComponent},
 
   {path: 'finance', component:FinanceComponent},
-  {path: 'communication', component:CommunicationComponent}
+  {path: 'communication', component:CommunicationComponent},
+  {path: 'pagenotfound', component:PagenotfoundComponent}
 
 
 ];

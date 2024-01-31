@@ -20,14 +20,14 @@
       
       <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification">
         <img src="../../../assets/images/notification0.jpg" alt="My Notification">
-        <span class="notification-badge">1</span>
+        <span class="notification-badge">2</span>
       </button>
 
 
       <!-- Within your existing code, add a new button for the profile dropdown -->
-<button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+<!-- <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
   <i class="far fa-user"></i>
-</button>
+</button> -->
 
 <!-- Add a new section for the profile dropdown menu -->
 <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
@@ -76,10 +76,13 @@
  
           <div class="placeholder-glow btn-lg">
             <!-- <span class="avatar w-128 avatar-primary"></span> -->
-            <i class="icons8-o-contacts btn-lg "></i>
+            <!-- <i class="icons8-o-contacts btn-lg "></i> -->
            
           </div>
-          <span class="label"><strong>Abdurrahman Gurib</strong></span>
+          <!-- <span class="label"><strong style="color: white;">Abdurrahman Gurib</strong></span> -->
+          <i class="icons8-o-contacts btn-lg"></i><span class="label" style="font-size: larger;"><strong style="color: white;">Abdurrahman Gurib</strong></span>
+
+
 
         </div>
         <div>
@@ -92,7 +95,7 @@
       <div class="chat-body">
         <!-- Chat Body Content -->
  
-        <div class="chat-message-list scrollable sd-scrollbar" style="height: 411px">
+        <div class="chat-message-list  sd-scrollbar" style="height: 411px">
           <div class="conversation-date">01 January 2023</div>
           <div class="message-sent">
             <div class="message-content">
