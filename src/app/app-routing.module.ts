@@ -16,6 +16,7 @@ import { FinanceComponent } from './components/financial/finance.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { SdnavbarComponent } from './components/sdnavbar/sdnavbar.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
 
   {path: 'finance', component:FinanceComponent},
   {path: 'communication', component:CommunicationComponent},
-  {path: 'pagenotfound', component:PagenotfoundComponent}
+  {path: 'pagenotfound', component:PagenotfoundComponent},
+  {path: 'sdnavbar', component:SdnavbarComponent}
 
 
 ];

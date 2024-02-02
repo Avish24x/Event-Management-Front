@@ -29,6 +29,7 @@ import { CommunicationComponent } from './components/communication/communication
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ApiComponent } from './services/api/api.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { SdnavbarComponent } from './components/sdnavbar/sdnavbar.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     SearchBarComponent,
     ApiComponent,
     PagenotfoundComponent,
+    SdnavbarComponent,
     
   ],
   imports: [
