@@ -28,7 +28,6 @@
     "@fullcalendar/interaction": "^6.1.10",
     "@fullcalendar/list": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
-    "@sdworx/sdwds": "^17.0.0",
     "@sdworx/sdwds-icons": "^6.1.1",
     "@sdworx/sdwds-styling": "^6.2.2",
     "ag-grid-angular": "^31.0.2",
