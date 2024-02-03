@@ -18,7 +18,7 @@ import { EventDisplayComponent } from './components/event-display/event-display.
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
-
+import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -38,7 +38,8 @@ const routes: Routes = [
   {path: 'finance', component:FinanceComponent},
   {path: 'communication', component:CommunicationComponent},
   {path: 'pagenotfound', component:PagenotfoundComponent},
-  {path: 'myprofile', component:MyprofileComponent}
+  {path: 'myprofile', component:MyprofileComponent},
+  {path: 'testsidenavbar', component:TestsidenavbarComponent},
 
 
 ];

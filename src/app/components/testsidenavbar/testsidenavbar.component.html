@@ -1,0 +1,90 @@
+<!-- <div class="banner">
+    <img src="../../../assets/images/spark/SDWorx_logo_normal.svg" alt="Banner Image">
+  </div> -->
+  <img src="../../../assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 90px; height: auto;">
+
+<div class="sidenav" [class.collapsed]="collapsed" [class.responsive]="responsive">
+    <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+
+    <div class="toggle" (click)="toggleCollapse()">
+      <i class="icon" [class.collapsed]="collapsed"></i>
+      <i class="toggle-icon" [class.collapsed]="collapsed"></i>
+    </div>
+    <div class="items">
+        <!-- <div class="banner">
+            <img src="../../../assets/images/Logo_SdWorx Positive.png" class="img-fluid" alt="Banner Image">
+          </div>        -->
+          
+          <div class="header" *ngIf="!collapsed">Event Management System</div>
+      <a class="item" href="#">
+        <span *ngIf="!collapsed">General</span>
+      </a>
+      <a class="item" href="/dashboard">
+        <i class="icon icons8-dashboard"></i> 
+        <span *ngIf="!collapsed">Dashboard</span>
+      </a>
+      
+      <a class="item" [class.current]="isActive('./')" href="./analytics">
+        <i class="icon icons8-line-chart"></i> 
+        <span *ngIf="!collapsed">Analytics</span>
+      </a>
+      
+      
+    
+      <a class="item" [class.current]="isActive('./')" href="./finance">
+        <i class="icon icons8-wallet"></i> 
+        <span *ngIf="!collapsed">Financial Overview</span>
+      </a>
+      
+      
+      <a class="item" [class.current]="isActive('./')" href="./events">
+        <i class="icon icons8-calendar"></i> 
+        <span *ngIf="!collapsed">Events Calendar</span>
+      </a>
+      
+    <a class="item" href="#">
+        <span *ngIf="!collapsed">Extra</span>
+      </a>
+      <a class="item" [class.current]="isActive('./')" href="./group-leaders">
+        <i class="icon icons8-group"></i> 
+        <span *ngIf="!collapsed">Group Leaders</span>
+      </a>
+      
+      
+      <a class="item" [class.current]="isActive('./')" href="./team-leaders">
+        <i class="icon icons8-organization"></i> 
+        <span *ngIf="!collapsed">Team Leaders</span>
+      </a>
+      
+      
+      
+      
+      <a class="item" [class.current]="isActive('./')" href="./reports">
+        <i class="icon icons8-file"></i> 
+        <span *ngIf="!collapsed">Generated Reports</span>
+      </a>
+      
+      
+
+      <a class="item" [class.current]="isActive('./')" href="./communication">
+        <i class="icon icons8-chat"></i> 
+        <span *ngIf="!collapsed">Support Assistance Tickets</span>
+      </a>
+      
+      
+      
+      <div class="line" *ngIf="!collapsed"></div>
+      <div class="item with-child" *ngIf="!collapsed">
+        <i class="icon icons8-o-tiles"></i> 
+        <span *ngIf="!collapsed">item with childs</span>
+        <a class="child-item" href="#">another item</a>
+      </div>
+      <a class="bottom item" href="#">
+        <i class="icon icons8-o-settings"></i> 
+        <span *ngIf="!collapsed">Settings</span>
+      </a>
+
+      <!-- <router-outlet></router-outlet> -->
+    </div>
+  </div>
+  

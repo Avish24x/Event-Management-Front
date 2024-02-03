@@ -31,6 +31,7 @@ import { ApiComponent } from './services/api/api.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
     ApiComponent,
     PagenotfoundComponent,
     MyprofileComponent,
+    TestsidenavbarComponent,
     
   ],
   imports: [
