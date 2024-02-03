@@ -29,7 +29,8 @@ import { CommunicationComponent } from './components/communication/communication
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ApiComponent } from './services/api/api.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { SdnavbarComponent } from './components/sdnavbar/sdnavbar.component';
+
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { SdnavbarComponent } from './components/sdnavbar/sdnavbar.component';
     SearchBarComponent,
     ApiComponent,
     PagenotfoundComponent,
-    SdnavbarComponent,
+    MyprofileComponent,
     
   ],
   imports: [

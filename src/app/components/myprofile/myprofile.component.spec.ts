@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdnavbarComponent } from './sdnavbar.component';
+import { MyprofileComponent } from './myprofile.component';
 
-describe('SdnavbarComponent', () => {
-  let component: SdnavbarComponent;
-  let fixture: ComponentFixture<SdnavbarComponent>;
+describe('MyprofileComponent', () => {
+  let component: MyprofileComponent;
+  let fixture: ComponentFixture<MyprofileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SdnavbarComponent ]
+      declarations: [ MyprofileComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SdnavbarComponent);
+    fixture = TestBed.createComponent(MyprofileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

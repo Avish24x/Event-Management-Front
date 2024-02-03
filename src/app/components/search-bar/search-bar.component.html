@@ -33,9 +33,30 @@
 <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
   <ul class="dropdown__list">
     <li class="dropdown__list-item">
-      <span class="dropdown__icon"><i class="far fa-user"></i></span>
-      <span class="dropdown__title">My Profile</span>
-    </li>
+      <a href="/myprofile" class="dropdown__link">
+        <!-- <script>
+          var app = angular.module('myApp', ['ngRoute']);
+          
+          app.config(function($routeProvider) {
+            $routeProvider
+              .when('/myprofile', {
+                templateUrl: './components/myprofile/myprofile.component.html',
+                controller: 'MyProfileController'
+              })
+              .otherwise({
+                redirectTo: '/'
+              });
+          });
+          
+          app.controller('MyProfileController', function() {
+            // Controller logic for MyProfile component
+          });
+        </script> -->
+          <span class="dropdown__icon"><i class="far fa-user"></i></span>
+          <span class="dropdown__title">My Profile</span>
+      </a>
+  </li>
+  
     <li class="dropdown__list-item">
       <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
       <span class="dropdown__title">My Account</span>
