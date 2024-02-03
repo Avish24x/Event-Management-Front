@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
 
     <div class="toggle" (click)="toggleCollapse()">
-      <i class="icon" [class.collapsed]="collapsed"></i>
-      <i class="toggle-icon" [class.collapsed]="collapsed"></i>
-    </div>
+        <i class="icon icons8-left-arrow" [class.collapsed]="collapsed">&larr;</i>
+        <!-- <span>Expand</span> -->
+        <i class="toggle-icon" [class.collapsed]="collapsed"></i>
+      </div>
+      
     <div class="items">
         <!-- <div class="banner">
             <img src="../../../assets/images/Logo_SdWorx Positive.png" class="img-fluid" alt="Banner Image">
