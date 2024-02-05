@@ -35,6 +35,8 @@ const routes: Routes = [
   {path: 'logout', component:LogoutComponent},
   {path: 'event-display', component:EventDisplayComponent},
 
+  {path: 'navbar', component:NavbarComponent},
+
   {path: 'finance', component:FinanceComponent},
   {path: 'communication', component:CommunicationComponent},
   {path: 'pagenotfound', component:PagenotfoundComponent},

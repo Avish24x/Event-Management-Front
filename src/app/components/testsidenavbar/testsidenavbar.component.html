@@ -18,28 +18,28 @@
           </div>        -->
           
           <div class="header" *ngIf="!collapsed">Event Management System</div>
-      <a class="item" href="#">
+      <a class="item" href="./testsidenavbar">
         <span *ngIf="!collapsed">General</span>
       </a>
-      <a class="item" href="/dashboard">
+      <a class="item" [class.current]="isActive('./dashboard')" href="./dashboard">
         <i class="icon icons8-dashboard"></i> 
         <span *ngIf="!collapsed">Dashboard</span>
       </a>
       
-      <a class="item" [class.current]="isActive('./')" href="./analytics">
+      <a class="item" [class.current]="isActive('./analytics')" href="./analytics">
         <i class="icon icons8-line-chart"></i> 
         <span *ngIf="!collapsed">Analytics</span>
       </a>
       
       
     
-      <a class="item" [class.current]="isActive('./')" href="./finance">
+      <a class="item" [class.current]="isActive('./finance')" href="./finance">
         <i class="icon icons8-wallet"></i> 
         <span *ngIf="!collapsed">Financial Overview</span>
       </a>
       
       
-      <a class="item" [class.current]="isActive('./')" href="./events">
+      <a class="item" [class.current]="isActive('./events')" href="./events">
         <i class="icon icons8-calendar"></i> 
         <span *ngIf="!collapsed">Events Calendar</span>
       </a>
@@ -61,14 +61,14 @@
       
       
       
-      <a class="item" [class.current]="isActive('./')" href="./reports">
+      <a class="item" [class.current]="isActive('./reports')" href="./reports">
         <i class="icon icons8-file"></i> 
         <span *ngIf="!collapsed">Generated Reports</span>
       </a>
       
       
 
-      <a class="item" [class.current]="isActive('./')" href="./communication">
+      <a class="item" [class.current]="isActive('./communication')" href="./communication">
         <i class="icon icons8-chat"></i> 
         <span *ngIf="!collapsed">Support Assistance Tickets</span>
       </a>
@@ -81,7 +81,7 @@
         <span *ngIf="!collapsed">item with childs</span>
         <a class="child-item" href="#">another item</a>
       </div> -->
-      <a class="bottom item" href="#">
+      <a class="bottom item" href="./myprofile">
         <i class="icon icons8-o-settings"></i> 
         <span *ngIf="!collapsed">Settings</span>
       </a>
