@@ -18,7 +18,7 @@ export class MyprofileComponent implements OnInit {
   userProfile: UserProfile = {
     name: 'Abdurrahman Gurib',
     position: 'Software Engineer',
-    username: 'Abdurrahman Guirb',
+    username: 'Abdurrahman Gurib',
     email: 'abdurrahman.gurib@sdworx.com',
     bio: 'I am a software engineer passionate about building great web applications.',
     pictureUrl: '../../../assets/images/spark/Motion-1.jpg' // Provide a default picture URL
