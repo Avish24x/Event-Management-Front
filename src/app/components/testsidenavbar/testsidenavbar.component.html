@@ -18,8 +18,8 @@
           </div>        -->
           
           <div class="header" *ngIf="!collapsed">Event Management System</div>
-      <a class="item" href="./testsidenavbar">
-        <span *ngIf="!collapsed">General</span>
+      <a class="item" href="./dashbord">
+       <span *ngIf="!collapsed">General</span> 
       </a>
       <a class="item" [class.current]="isActive('./dashboard')" href="./dashboard">
         <i class="icon icons8-dashboard"></i> 
@@ -44,7 +44,7 @@
         <span *ngIf="!collapsed">Events Calendar</span>
       </a>
       
-    <a class="item" href="#">
+    <a class="item" href="./group-leaders">
         <span *ngIf="!collapsed">Extra</span>
       </a>
       <a class="item" [class.current]="isActive('./')" href="./group-leaders">
