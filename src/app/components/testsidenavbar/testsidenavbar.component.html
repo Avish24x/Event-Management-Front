@@ -1,92 +1,60 @@
-<!-- <div class="banner">
-    <img src="../../../assets/images/spark/SDWorx_logo_normal.svg" alt="Banner Image">
-  </div> -->
-  <!-- <img src="../../../assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 90px; height: auto;"> -->
+<img src="../../../assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 90px; height: auto;">
+
 
 <div class="sidenav" [class.collapsed]="collapsed" [class.responsive]="responsive">
-    <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
 
-    <div class="toggle" (click)="toggleCollapse()">
-        <i class="icon icons8-left-arrow" [class.collapsed]="collapsed">&larr;</i>
-        <!-- <span>Expand</span> -->
-        <i class="toggle-icon" [class.collapsed]="collapsed"></i>
-      </div>
-      
-    <div class="items">
-        <!-- <div class="banner">
-            <img src="../../../assets/images/Logo_SdWorx Positive.png" class="img-fluid" alt="Banner Image">
-          </div>        -->
-          
-          <div class="header" *ngIf="!collapsed">Event Management System</div>
-      <a class="item" href="./dashbord">
-       <span *ngIf="!collapsed">General</span> 
-      </a>
-      <a class="item" [class.current]="isActive('./dashboard')" href="./dashboard">
-        <i class="icon icons8-dashboard"></i> 
-        <span *ngIf="!collapsed">Dashboard</span>
-      </a>
-      
-      <a class="item" [class.current]="isActive('./analytics')" href="./analytics">
-        <i class="icon icons8-line-chart"></i> 
-        <span *ngIf="!collapsed">Analytics</span>
-      </a>
-      
-      
-    
-      <a class="item" [class.current]="isActive('./finance')" href="./finance">
-        <i class="icon icons8-wallet"></i> 
-        <span *ngIf="!collapsed">Financial Overview</span>
-      </a>
-      
-      
-      <a class="item" [class.current]="isActive('./events')" href="./events">
-        <i class="icon icons8-calendar"></i> 
-        <span *ngIf="!collapsed">Events Calendar</span>
-      </a>
-      
-    <a class="item" href="./group-leaders">
-        <span *ngIf="!collapsed">Extra</span>
-      </a>
-      <a class="item" [class.current]="isActive('./')" href="./group-leaders">
-        <i class="icon icons8-group"></i> 
-        <span *ngIf="!collapsed">Group Leaders</span>
-      </a>
-      
-      
-      <a class="item" [class.current]="isActive('./')" href="./team-leaders">
-        <i class="icon icons8-organization"></i> 
-        <span *ngIf="!collapsed">Team Leaders</span>
-      </a>
-      
-      
-      
-      
-      <a class="item" [class.current]="isActive('./reports')" href="./reports">
-        <i class="icon icons8-file"></i> 
-        <span *ngIf="!collapsed">Generated Reports</span>
-      </a>
-      
-      
-
-      <a class="item" [class.current]="isActive('./communication')" href="./communication">
-        <i class="icon icons8-chat"></i> 
-        <span *ngIf="!collapsed">Support Assistance Tickets</span>
-      </a>
-      
-      
-      
-      <!-- <div class="line" *ngIf="!collapsed"></div>
-      <div class="item with-child" *ngIf="!collapsed">
-        <i class="icon icons8-o-tiles"></i> 
-        <span *ngIf="!collapsed">item with childs</span>
-        <a class="child-item" href="#">another item</a>
-      </div> -->
-      <a class="bottom item" href="./myprofile">
-        <i class="icon icons8-o-settings"></i> 
-        <span *ngIf="!collapsed">Settings</span>
-      </a>
-
-      <!-- <router-outlet></router-outlet> -->
-    </div>
+  <div class="toggle" (click)="toggleCollapse()">
+      <i class="icon icons8-left-arrow" [class.collapsed]="collapsed">&larr;</i>
+      <i class="toggle-icon" [class.collapsed]="collapsed"></i>
   </div>
+    
+  <div class="items">
+      <div class="header" *ngIf="!collapsed">Event Management System</div>
+      
+      <a class="item" [routerLink]="['/dashboard']" routerLinkActive="current">
+          <i class="icon icons8-dashboard"></i> 
+          <span *ngIf="!collapsed">Dashboard</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/analytics']" routerLinkActive="current">
+          <i class="icon icons8-line-chart"></i> 
+          <span *ngIf="!collapsed">Analytics</span>
+      </a>
   
+      <a class="item" [routerLink]="['/finance']" routerLinkActive="current">
+          <i class="icon icons8-wallet"></i> 
+          <span *ngIf="!collapsed">Financial Overview</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/events']" routerLinkActive="current">
+          <i class="icon icons8-calendar"></i> 
+          <span *ngIf="!collapsed">Events Calendar</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/group-leaders']" routerLinkActive="current">
+          <i class="icon icons8-group"></i> 
+          <span *ngIf="!collapsed">Group Leaders</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/team-leaders']" routerLinkActive="current">
+          <i class="icon icons8-organization"></i> 
+          <span *ngIf="!collapsed">Team Leaders</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/reports']" routerLinkActive="current">
+          <i class="icon icons8-file"></i> 
+          <span *ngIf="!collapsed">Generated Reports</span>
+      </a>
+    
+      <a class="item" [routerLink]="['/communication']" routerLinkActive="current">
+          <i class="icon icons8-chat"></i> 
+          <span *ngIf="!collapsed">Support Assistance Tickets</span>
+      </a>
+    
+      <a class="bottom item" [routerLink]="['/myprofile']" routerLinkActive="current">
+          <i class="icon icons8-o-settings"></i> 
+          <span *ngIf="!collapsed">Settings</span>
+      </a>
+  </div>
+</div>
