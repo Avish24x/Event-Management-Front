@@ -9,19 +9,19 @@ export class EventDisplayComponent {
   events: Event[] = [
     {
       title: 'Fun @ Worx',
-      description: 'we are here to make you have a good time...',
+      description: ' Have a good time...',
       date: 'Jan 19, 2024',
       imageUrl: 'assets/images/gaming.jpg'
     },
     {
       title: 'HR Team',
-      description: 'Description for Event 1...',
+      description: 'Hire mee!!...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/donation.jpg'
     },
     {
       title: 'Payback Team',
-      description: 'Description for Event 1...',
+      description: 'Donation collect ...',
       date: 'Jan 25, 2024',
       imageUrl: 'assets/images/fun.jpg'
     },

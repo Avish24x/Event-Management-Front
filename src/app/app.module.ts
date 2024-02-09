@@ -32,6 +32,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenav
     ReactiveFormsModule,
     HighchartsChartModule,
     FullCalendarModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

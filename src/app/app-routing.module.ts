@@ -20,6 +20,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 
+
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'sign up', component: SignUpComponent},
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'pagenotfound', component:PagenotfoundComponent},
   {path: 'myprofile', component:MyprofileComponent},
   {path: 'testsidenavbar', component:TestsidenavbarComponent},
+
 
 
 ];
