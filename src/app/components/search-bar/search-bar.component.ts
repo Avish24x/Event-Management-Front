@@ -38,4 +38,21 @@ export class SearchBarComponent {
   toggleProfileDropdown() {
     this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
   }
+
+
+  toggleSuggestions() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  // Method to insert the selected suggestion into the chat message input field
+  insertSuggestion(suggestion: string) {
+    // You can do whatever you want with the suggestion here, for now, let's log it to console
+    console.log("Selected suggestion:", suggestion);
+
+    // Assuming you have a reference to the input field, you can insert the suggestion into it
+    const inputField = document.getElementById('txtTextMedium') as HTMLInputElement;
+    if (inputField) {
+      inputField.value = suggestion;
+    }
+  }
 }

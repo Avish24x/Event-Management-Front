@@ -167,18 +167,21 @@
  
       </div>
       <div class="divider"></div>
+
       <div class="chat-suggestion">
-        <div class="suggestion-title" (click)="onClick()">
+        <div class="suggestion-title" (click)="toggleSuggestions()">
           <i [ngClass]="{ 'icons8-o-collapse-arrow': isExpanded, 'icons8-o-expand-arrow': !isExpanded }"></i>
-          <div class="label">suggestions</div>
+          <div class="label">Suggestions</div>
         </div>
         <div *ngIf="isExpanded" class="suggestions">
           <div class="flex-columns gap-2">
-            <button class="btn btn-tertiary btn-sm">Page 404</button>
-            <button class="btn btn-tertiary btn-sm">Registration issues</button>
+            <button class="btn btn-tertiary btn-sm" (click)="insertSuggestion('Page 404')">Page 404</button>
+            <button class="btn btn-tertiary btn-sm" (click)="insertSuggestion('Registration issues')">Registration issues</button>
           </div>
         </div>
       </div>
+
+
       <div class="divider"></div>
       <div class="chat-message-entry">
         <div class="form-group">
