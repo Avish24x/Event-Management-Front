@@ -33,6 +33,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserguideComponent } from './components/userguide/userguide.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PagenotfoundComponent,
     MyprofileComponent,
     TestsidenavbarComponent,
+    UserguideComponent,
     
   ],
   imports: [

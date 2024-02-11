@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-testsidenavbar',
@@ -11,11 +10,9 @@ export class TestsidenavbarComponent implements OnInit {
   showToggle: boolean = true;
   responsive: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // Navigate to the /analytics page when the component initializes
-    this.router.navigateByUrl('/event-display');
   }
 
   toggleCollapse(): void {

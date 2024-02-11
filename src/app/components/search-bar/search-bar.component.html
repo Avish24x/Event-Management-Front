@@ -32,49 +32,36 @@
 <!-- Add a new section for the profile dropdown menu -->
 <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
   <ul class="dropdown__list">
+    
     <li class="dropdown__list-item">
       <a href="/myprofile" class="dropdown__link">
-        <!-- <script>
-          var app = angular.module('myApp', ['ngRoute']);
-          
-          app.config(function($routeProvider) {
-            $routeProvider
-              .when('/myprofile', {
-                templateUrl: './components/myprofile/myprofile.component.html',
-                controller: 'MyProfileController'
-              })
-              .otherwise({
-                redirectTo: '/'
-              });
-          });
-          
-          app.controller('MyProfileController', function() {
-            // Controller logic for MyProfile component
-          });
-        </script> -->
         <span class="dropdown__icon">
           <i class="illustrative-biometric-authorisation" style="width: 20px; height: 20px;"></i>
-      </span>
-      <span class="dropdown__title">My Profile</span>
-      
-      
-      
-      
-      
-        
+        </span>
+        <span class="dropdown__title">My Profile</span>
       </a>
-  </li>
+    </li>
   
     <li class="dropdown__list-item">
-      <span class="dropdown__icon"><i class="illustrative-error " style="width: 20px; height: 20px;"></i></span>
-      <span class="dropdown__title">User Guide</span>
+      <a href="/userguide" class="dropdown__link">
+        <span class="dropdown__icon">
+          <i class="illustrative-error " style="width: 20px; height: 20px;"></i>
+        </span>
+        <span class="dropdown__title">User Guide</span>
+      </a>
     </li>
+
     <li class="dropdown__list-item">
-      <span class="dropdown__icon"><i class="illustrative-clock-in-out " style="width: 20px; height: 20px;"></i></span>
-      <span class="dropdown__title">Log Out</span>
+      <a href="/login" class="dropdown__link">
+        <span class="dropdown__icon">
+          <i class="illustrative-clock-in-out " style="width: 20px; height: 20px;"></i>
+        </span>
+        <span class="dropdown__title">Log Out</span>
+      </a>
     </li>
   </ul>
 </div>
+
 
       
       <!-- Back to Top Button -->
