@@ -10,6 +10,44 @@
 // .form-control {
 //   width: 10px; // Customize the width as per your requirement
 // }
+.notification-data {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: box-shadow 0.3s ease; /* Add transition effect for smooth hover */
+}
+
+.notification:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Apply hover effect */
+}
+
+.notification.hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Apply hover effect */
+}
+
+.notification-icon {
+  margin-right: 10px;
+  color: #007bff; /* Color for notification icons */
+}
+
+.notification-text {
+  color: #333;
+}
+
+
+
+
 
   .btn {
     position: relative; // Ensure relative positioning for absolute positioning of the badge

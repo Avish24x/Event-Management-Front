@@ -10,17 +10,26 @@ export class SearchBarComponent {
   isClosed: boolean = true;
   isExpanded: boolean = false;
   isProfileDropdownOpen: boolean = false; // Add this line
- 
+  isNotificationOpen: boolean = false;
+  hoverNotification: boolean = false; // Declare hoverNotification property
+  hoverNotification2: boolean = false; // Declare hoverNotification2 property
+
+
   @Output() searchEvent = new EventEmitter<string>();
  
   search() {
     this.searchEvent.emit(this.searchQuery);
   }
  
+  
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
  
+
+  toggleNotification() {
+    this.isNotificationOpen = !this.isNotificationOpen;
+  }
   // Toggle Chatbox
   toggleChatbox() {
     this.isClosed = !this.isClosed;

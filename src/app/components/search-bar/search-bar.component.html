@@ -18,10 +18,33 @@
         <img src="../../../assets/images/profile0.jpg" style="width: 30px; height: 30px;" alt="My Profile">
       </button>
       
-      <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification">
-        <img src="../../../assets/images/notification0.jpg" style="width: 30px; height: 30px;" alt="My Notification">
-        <span class="notification-badge">2</span>
-      </button>
+      <!-- Profile Dropdown Button -->
+<button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification" (click)="toggleNotification()">
+  <img src="../../../assets/images/notification0.jpg" style="width: 30px; height: 30px;" alt="My Notification">
+  <span class="notification-badge">2</span>
+</button>
+
+<!-- Add a section to display dummy notification data -->
+<div *ngIf="isNotificationOpen" class="notification-data">
+  <!-- Dummy notification data for event management system -->
+  <div class="notification" (mouseover)="hoverNotification = true" (mouseleave)="hoverNotification = false" [class.hover]="hoverNotification">
+    <span class="notification-icon">
+      <i class="illustrative-period-plans " style="width: 20px; height: 20px;"></i>
+    </span>
+    <span class="notification-text">
+      New event created: "Conference on Artificial Intelligence" <!-- Event name -->
+    </span>
+  </div>
+  <div class="notification" (mouseover)="hoverNotification2 = true" (mouseleave)="hoverNotification2 = false" [class.hover]="hoverNotification2">
+    <span class="notification-icon">
+      <i class="illustrative-write-document " style="width: 20px; height: 20px;"></i> <!-- Icon for important notification -->
+    </span>
+    <span class="notification-text">
+      Reminder: Upcoming deadline for event registration <!-- Notification text -->
+    </span>
+  </div>
+</div>
+
 
 
       <!-- Within your existing code, add a new button for the profile dropdown -->
