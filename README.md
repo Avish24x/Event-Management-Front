@@ -21,7 +21,7 @@ To get started with the SD Worx Event Management System, follow these steps:
 
 1. Clone the repository to your local machine:
    \```bash
-   git clone https://github.com/your-username/sd-worx-event-management.git
+   git clone https://github.com/Avish24x/Event-Management-Front.git
    \```
 
 2. Install dependencies:
@@ -36,7 +36,7 @@ To get started with the SD Worx Event Management System, follow these steps:
 
 4. Start the development server:
    \```bash
-   npm start
+   ng serve
    \```
 
 5. Access the application in your web browser: http://localhost:4200
@@ -57,13 +57,16 @@ The SD Worx Event Management System is licensed under the [MIT License](LICENSE)
 \## Authors
 
 This project was developed and tested by IT grads in 2023:
-- John Doe (@johndoe)
-- Jane Smith (@janesmith)
+- Abdurrahman Gurib (Full-Stack Engineer)
+- Milesh Taukoorah (Full-Stack Engineer)
+- Yeshan Sahody (Full-Stack Engineer)
+- Yuvraj Gangaram (Full-Stack Engineer)
+- Ekantesh Panchoo (Quality Assurance Engineer)
 
 \## Acknowledgements
 
 We would like to thank the following individuals for their contributions to this project:
-- [Name] - for valuable insights and feedback.
-- [Name] - for assistance with testing and debugging.
+- [Pushpindar] - for valuable insights and feedback.
+- [Preetee] - for assistance with testing and debugging.
 
    
