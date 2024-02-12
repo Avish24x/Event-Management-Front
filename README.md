@@ -66,7 +66,7 @@ This project was developed and tested by IT grads in 2023:
 \## Acknowledgements
 
 We would like to thank the following individuals for their contributions to this project:
-- [Pushpindar] - for valuable insights and feedback.
+- [Pushpindar/Bilkiss/Christophe] - for valuable insights and feedback.
 - [Preetee] - for assistance with testing and debugging.
 
    
