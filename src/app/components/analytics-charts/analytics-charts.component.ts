@@ -52,12 +52,39 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     }
   }; // required
 
+  bubbleChartOptions: Highcharts.Options = {
+    chart: {
+      type: 'areaspline',
+    },
+    title: {
+      text: 'Event Management Program'
+    },
+    colors: ['#e94e0f','#870b58','#e4003a','#f8ad07'],
+    series: [{
+      
+      data: [
+        ['Fun@Worx', 30],
+        ['HR Team', 40],
+        ['Payback Team', 20],
+        ['SD Trails', 10]
+      ]
+    }] as Highcharts.SeriesOptionsType[],
+    plotOptions: {
+      pie: {
+        animation: {
+          duration: 1000,
+          easing: 'easeOutBounce'
+        }
+      }
+    }
+  }; // required
+
   barChartOptions: Highcharts.Options = {
     chart: {
       type: 'bar',
     },
     title: {
-      text: 'Highcharts Bar Chart'
+      text: 'SD Worx Group'
     },
     
     xAxis: {
@@ -65,13 +92,13 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     },
     yAxis: {
       title: {
-        text: 'Value'
+        text: 'Event'
       }
     },
-    colors: ['#f8ad07'],
+    colors: ['#f8ad07','#870b58','#e4003a',],
     series: [{
-      name: 'Highcharts Bar Chart',
-      data: [100, 20, 30],
+      name: 'Event Per Groups',
+      data: [100 , 20, 30],
       
     }] as Highcharts.SeriesOptionsType[],
     plotOptions: {
@@ -89,14 +116,14 @@ export class AnalyticsChartsComponent implements AfterViewInit {
       type: 'line',
     },
     title: {
-      text: 'Highcharts Line Chart'
+      text: 'Success Rate Chart'
     },
     xAxis: {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
     },
     yAxis: {
       title: {
-        text: 'Value'
+        text: 'Count'
       }
     },
     colors: ['#870b58','#e4003a',],
@@ -179,32 +206,6 @@ export class AnalyticsChartsComponent implements AfterViewInit {
     }
   }; // required
 
-  bubbleChartOptions: Highcharts.Options = {
-    chart: {
-      type: 'bubble',
-    },
-    title: {
-      text: 'Highcharts Bubble Chart'
-    },
-    series: [{
-      name: 'Highcharts Bubble Chart',
-      data: [
-        [10, 20, 30],
-        [15, 25, 35],
-        [20, 30, 40],
-        [25, 35, 45],
-        [30, 40, 50]
-      ]
-    }] as Highcharts.SeriesOptionsType[],
-    plotOptions: {
-      bubble: {
-        animation: {
-          duration: 1000,
-          easing: 'easeOutBounce'
-        }
-      }
-    }
-  }; // required
 
   chartCallback: Highcharts.ChartCallbackFunction = function (chart) {
     // optional function, defaults to null

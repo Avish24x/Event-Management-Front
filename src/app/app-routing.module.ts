@@ -45,9 +45,7 @@ const routes: Routes = [
   {path: 'myprofile', component:MyprofileComponent},
   {path: 'testsidenavbar', component:TestsidenavbarComponent},
   {path: 'userguide', component:UserguideComponent},
-
-
-
+  {path: '', pathMatch: 'full', redirectTo: '/events'},
 ];
 
 @NgModule({

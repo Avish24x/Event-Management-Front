@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-testsidenavbar',
@@ -10,11 +11,16 @@ export class TestsidenavbarComponent implements OnInit {
   showToggle: boolean = true;
   responsive: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  // this is for the navbar to not be display on both the login and the sign up page 
   ngOnInit(): void {
+    const currentPath = window.location.pathname;
+    this.showToggle = currentPath !== '/login' && currentPath !== '/sign%20up';
   }
 
+  
+  
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
   }

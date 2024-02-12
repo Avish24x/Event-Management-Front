@@ -8,7 +8,6 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CalenderComponent } from './components/calender/calender.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
-import { EventsComponent } from './components/events/events.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
 import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
@@ -27,13 +26,14 @@ import {HighchartsChartModule} from 'highcharts-angular';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { CommunicationComponent } from './components/communication/communication.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { ApiComponent } from './services/api/api.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserguideComponent } from './components/userguide/userguide.component';
+import { EventsComponent } from './components/events/events.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +44,6 @@ import { UserguideComponent } from './components/userguide/userguide.component';
     NavbarComponent,
     CalenderComponent,
     AnalyticsComponent,
-    EventsComponent,
     DashboardComponent,
     GroupLeadersComponent,
     TeamLeadersComponent,
@@ -58,7 +57,6 @@ import { UserguideComponent } from './components/userguide/userguide.component';
     EventDisplayComponent,
     CommunicationComponent,
     SearchBarComponent,
-    ApiComponent,
     PagenotfoundComponent,
     MyprofileComponent,
     TestsidenavbarComponent,
@@ -71,10 +69,12 @@ import { UserguideComponent } from './components/userguide/userguide.component';
     ReactiveFormsModule,
     HighchartsChartModule,
     FullCalendarModule,
+    HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    EventsComponent
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
