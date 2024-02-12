@@ -34,6 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserguideComponent } from './components/userguide/userguide.component';
 import { EventsComponent } from './components/events/events.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MyprofileComponent,
     TestsidenavbarComponent,
     UserguideComponent,
+    ChatboxComponent,
     
   ],
   imports: [

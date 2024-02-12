@@ -20,6 +20,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 import { UserguideComponent } from './components/userguide/userguide.component';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
+
 
 
 const routes: Routes = [
@@ -45,6 +47,7 @@ const routes: Routes = [
   {path: 'myprofile', component:MyprofileComponent},
   {path: 'testsidenavbar', component:TestsidenavbarComponent},
   {path: 'userguide', component:UserguideComponent},
+  { path: 'chatbox', component: ChatboxComponent },
   {path: '', pathMatch: 'full', redirectTo: '/events'},
 ];
 
