@@ -4,16 +4,13 @@
     <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
     <div class="input-group-append">
       <!-- Search Button -->
-     
       <!-- Support Button -->
-      <!-- <button class="btn btn-outline-secondary btn-support btn-lg" type="button" data-toggle="tooltip" title="Assistance Support Chatbot" (click)="toggleChatbox()">
-        <i class="bi bi-chat-dots" style="color: #870b58;"></i>
-      </button> -->
       <!-- Profile Dropdown Button -->
       <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
         <img src="../../../assets/images/search0.jpg" style="width: 30px; height: 30px;" alt="Search">
       </button>
-      
+    </div>
+    
       <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
         <img src="../../../assets/images/profile0.jpg" style="width: 30px; height: 30px;" alt="My Profile">
       </button>
@@ -102,7 +99,7 @@
 
 
   </div>
-</div>
+
  
     <!-- Chatbox Code -->
     <div *ngIf="!isClosed" class="chatbox">

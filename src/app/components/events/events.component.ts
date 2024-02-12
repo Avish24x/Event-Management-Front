@@ -21,10 +21,8 @@ import { NgbDatepicker, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { SdwdsFullCalendarIcons } from '@sdworx/sdwds/fullcalendar';
 import { CalenderService } from 'src/app/services/calender.service';
 import { DateTime } from 'luxon';
-import {
-  SdwdsSidenavComponent,
-  SdwdsSidenavItemComponent,
-} from '@sdworx/sdwds/sidenav';
+
+
 import { ICalendarEvent } from 'src/app/model/event.model';
 import { PartialEvent } from 'src/app/model/partial-event';
 import { EventCalendarService } from 'src/app/services/event-calender/event-calender.service';
@@ -35,9 +33,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [
     CommonModule,
-    FullCalendarModule,
-    SdwdsSidenavComponent,
-    SdwdsSidenavItemComponent,
+    FullCalendarModule
   ],
   providers: [CalenderService, HttpClient],
   templateUrl: './events.component.html',
