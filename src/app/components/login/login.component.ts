@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 declare var $: any;
 
@@ -24,9 +26,12 @@ export class LoginComponent {
   loginForm: FormGroup;
   otpForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private apiService : ApiService,
+    private authService : AuthService,
+    ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: [''],//[Validators.required, Validators.email]
       password: ['', [Validators.required, Validators.minLength(8), containsSpecialCharacter]]
     });
 
@@ -37,7 +42,13 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      $('#otpModal').modal('show');
+      console.log('Login Form: ', this.loginForm?.value);
+      this.apiService
+      .request('login', 'post', this.loginForm?.value)
+      .subscribe((result : {[key: string]:any}) => {
+        console.log("login result: ", result);
+        //this.authService.login(result);
+      })
     } else {
       console.log('Form has validation errors');
       this.loginForm.get('password')?.markAsTouched();
