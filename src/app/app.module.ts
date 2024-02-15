@@ -35,6 +35,7 @@ import { UserguideComponent } from './components/userguide/userguide.component';
 import { EventsComponent } from './components/events/events.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
     TestsidenavbarComponent,
     UserguideComponent,
     ChatboxComponent,
+    EventRegistrationComponent,
     
   ],
   imports: [

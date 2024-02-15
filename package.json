@@ -30,6 +30,7 @@
     "@fullcalendar/luxon2": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
     "@ng-bootstrap/ng-bootstrap": "^14.2.0",
+    "@ng-select/ng-select": "^12.0.7",
     "@popperjs/core": "^2.11.6",
     "@sdworx/sdwds": "^17.0.0",
     "@sdworx/sdwds-icons": "^6.1.1",
