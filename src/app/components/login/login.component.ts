@@ -42,13 +42,8 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Login Form: ', this.loginForm?.value);
-      this.apiService
-      .request('login', 'post', this.loginForm?.value)
-      .subscribe((result : {[key: string]:any}) => {
-        console.log("login result: ", result);
-        //this.authService.login(result);
-      })
+      // Open OTP modal when login form is submitted
+      $('#otpModal').modal('show');
     } else {
       console.log('Form has validation errors');
       this.loginForm.get('password')?.markAsTouched();
@@ -56,6 +51,13 @@ export class LoginComponent {
   }
 
   verifyOTP() {
-    console.log('OTP verification successful!');
+    if (this.otpForm.valid) {
+      console.log('OTP verification successful!');
+      // Close OTP modal after OTP verification
+      $('#otpModal').modal('hide');
+      // Proceed with login or further actions
+    } else {
+      console.log('OTP form has validation errors');
+    }
   }
 }
