@@ -7,8 +7,8 @@ declare var $: any;
 
 // Custom validator function
 export function containsSpecialCharacter(control: AbstractControl): { [key: string]: boolean } | null {
-  // Add your desired special characters to the regular expression
-  const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+  const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;  
 
   if (!specialCharacterRegex.test(control.value)) {
     return { 'specialCharacter': true };

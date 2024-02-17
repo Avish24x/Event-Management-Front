@@ -36,6 +36,7 @@ import { EventsComponent } from './components/events/events.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
 import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { EventRegistrationComponent } from './components/event-registration/even
     UserguideComponent,
     ChatboxComponent,
     EventRegistrationComponent,
+    ForgetpasswordComponent,
     
   ],
   imports: [
