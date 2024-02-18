@@ -4,16 +4,16 @@
 <form role="form" (ngSubmit)="submitForm()" [class.was-validated]="submitted">
     <h6 class="form-heading">Identity</h6>
     <div class="form-group">
-      <label class="form-label" for="txtFirstName">First name</label>
-      <input class="form-control" id="txtFirstName" type="text" placeholder="Type your first name" required />
+      <label class="form-label" for="txtFirstName">Event name</label>
+      <input class="form-control" id="txtFirstName" type="text" placeholder="Event name.." required />
     </div>
     <div class="form-group-spacer">
-      <label class="form-label" for="txtLastName">Last name</label>
-      <input class="form-control" id="txtLastName" type="text" placeholder="Type your surname" required />
+      <label class="form-label" for="txtLastName">Event Description</label>
+      <input class="form-control" id="txtLastName" type="text" placeholder="Event Description.." required />
     </div>
-    <h6 class="form-heading">Contract</h6>
+    <h6 class="form-heading">Event</h6>
     <div class="form-group">
-      <label class="form-label" for="typeOfContracts">Type contract</label>
+      <label class="form-label" for="typeOfContracts">Event Type</label>
       <ng-select
         labelForId="typeOfContracts"
         name="typeOfContracts"
@@ -42,14 +42,14 @@
       </div>
     </div>
     <div class="form-group-spacer">
-      <label class="form-label" for="chkWorkRegime">Work regime</label>
+      <label class="form-label" for="chkWorkRegime">Event Type</label>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="chkWorkRegime" id="workFulltime" checked />
-        <label class="form-check-label" for="workFulltime">Full-time</label>
+        <label class="form-check-label" for="workFulltime">Virtual</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="chkWorkRegime" id="workParttime" />
-        <label class="form-check-label" for="workParttime">Part-time</label>
+        <label class="form-check-label" for="workParttime">On-Site</label>
       </div>
     </div>
     <div class="d-flex gap-2">
