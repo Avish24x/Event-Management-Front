@@ -4,11 +4,25 @@ body {
 
 
 
-.chart-container {
-    width: 100%;
-    max-width: 600px; /* Set your desired max-width */
-    margin: 20px auto;
-  }
+/* charts.component.css */
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 400px;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
   
   /* charts.component.scss */
 
