@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 declare var $: any;
 
@@ -7,40 +8,54 @@ declare var $: any;
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit, OnInit {
+
+  isNavbarHidden = false;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit() {
+    // Initial check for visibility
+    this.toggleNavbarVisibility();
+
+    // Subscribe to route changes
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Check for visibility on route change
+        this.toggleNavbarVisibility();
+        // Highlight active link
+        this.highlightActiveLink();
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
-    const self = this; // Capture the reference to 'this'
+    // Initialize sidebar
+    this.initSidebar();
+  }
 
-    $(function () {
-      $(".sidebar-dropdown > a").click(function (this: HTMLElement) {
-        $(".sidebar-submenu").slideUp(200);
-        if (
-          $(this)
-            .parent()
-            .hasClass("active")
-        ) {
-          $(".sidebar-dropdown").removeClass("active");
-          $(this)
-            .parent()
-            .removeClass("active");
-        } else {
-          $(".sidebar-dropdown").removeClass("active");
-          $(this)
-            .next(".sidebar-submenu")
-            .slideDown(200);
-          $(this)
-            .parent()
-            .addClass("active");
-        }
-      });
-
-      $("#close-sidebar").click(function (this: HTMLElement) {
-        $(".page-wrapper").removeClass("toggled");
-      });
-      $("#show-sidebar").click(function (this: HTMLElement) {
-        $(".page-wrapper").addClass("toggled");
-      });
+  initSidebar(): void {
+    $("#close-sidebar").click(() => {
+      $(".page-wrapper").removeClass("toggled");
     });
+
+    $("#show-sidebar").click(() => {
+      $(".page-wrapper").addClass("toggled");
+    });
+  }
+
+  highlightActiveLink(): void {
+    $(".sidebar-dropdown").removeClass("active");
+    const currentRoute = this.router.url;
+    $(`.sidebar-dropdown a[href='${currentRoute}']`).parent().addClass("active");
+  }
+
+  toggleNavbarVisibility(): void {
+    // Check if the current route is a login or signup page
+    const isLoginPage = this.router.url.includes('login');
+    const isSignUpPage = this.router.url.includes('sign%20up'); // Updated to match the encoded space
+
+    // Hide the navbar on login and signup pages, show it otherwise
+    this.isNavbarHidden = isLoginPage || isSignUpPage;
   }
 }

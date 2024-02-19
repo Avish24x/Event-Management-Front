@@ -1,0 +1,62 @@
+
+
+<div class="container">
+<div class="sidenav" [class.collapsed]="collapsed" [class.responsive]="responsive" *ngIf="showToggle">
+    <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+  
+    <div class="toggle" (click)="toggleCollapse()">
+        <i class="icon icons8-left-arrow" [class.collapsed]="collapsed">&larr;</i>
+        <i class="toggle-icon" [class.collapsed]="collapsed"></i>
+    </div>
+      
+    <div class="items">
+        <div class="header" *ngIf="!collapsed">Event Management System</div>
+        
+        <a class="item" [routerLink]="['/dashboard']" routerLinkActive="active">
+            <i class="icon icons8-dashboard"></i> 
+            <span *ngIf="!collapsed">Dashboard</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/analytics']" routerLinkActive="current">
+            <i class="icon icons8-line-chart"></i> 
+            <span *ngIf="!collapsed">Analytics</span>
+        </a>
+    
+        <a class="item" [routerLink]="['/finance']" routerLinkActive="current">
+            <i class="icon icons8-wallet"></i> 
+            <span *ngIf="!collapsed">Financial Overview</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/events']" routerLinkActive="current">
+            <i class="icon icons8-calendar"></i> 
+            <span *ngIf="!collapsed">Events Calendar</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/group-leaders']" routerLinkActive="current">
+            <i class="icon icons8-group"></i> 
+            <span *ngIf="!collapsed">Group Leaders</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/team-leaders']" routerLinkActive="current">
+            <i class="icon icons8-organization"></i> 
+            <span *ngIf="!collapsed">Team Leaders</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/reports']" routerLinkActive="current">
+            <i class="icon icons8-file"></i> 
+            <span *ngIf="!collapsed">Generated Reports</span>
+        </a>
+      
+        <a class="item" [routerLink]="['/communication']" routerLinkActive="current">
+            <i class="icon icons8-chat"></i> 
+            <span *ngIf="!collapsed">Support Assistance Tickets</span>
+        </a>
+      
+        <a class="bottom item" [routerLink]="['/myprofile']" routerLinkActive="current">
+            <i class="icon icons8-o-settings"></i> 
+            <span *ngIf="!collapsed">Settings</span>
+        </a>
+    </div>    
+    
+  </div>
+</div>

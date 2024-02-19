@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+
+declare var $: any;
 
 // Custom validator function
 export function containsSpecialCharacter(control: AbstractControl): { [key: string]: boolean } | null {
@@ -20,20 +25,42 @@ export function containsSpecialCharacter(control: AbstractControl): { [key: stri
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  otpForm: FormGroup;
+  private router = inject(Router);
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private apiService : ApiService,
+   private authService : AuthService,
+    ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: [],//[Validators.required, Validators.email]
       password: ['', [Validators.required, Validators.minLength(8), containsSpecialCharacter]]
+    });
+
+    this.otpForm = this.fb.group({
+      otp: ['', [Validators.required]]
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Form submitted:', this.loginForm.value);
+      console.log('Login Form: ', this.loginForm?.value);
+      this.apiService
+      .request('login', 'post', this.loginForm?.value)
+      .subscribe((result : {[key: string]:any}) => {
+        console.log("login result: ", result);
+       // this.authService.login(result);
+       if(result['status'] === "Success"){
+        this.router.navigate(['/events']);
+       }
+      })
     } else {
       console.log('Form has validation errors');
       this.loginForm.get('password')?.markAsTouched();
     }
+  }
+
+  verifyOTP() {
+    console.log('OTP verification successful!');
   }
 }

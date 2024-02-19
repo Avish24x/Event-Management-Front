@@ -31,12 +31,18 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/@sdworx/sdwds-styling/css/themes/default/main.min.css",
               "node_modules/@sdworx/sdwds-icons/css/main.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/jquery-ui/themes/base/datepicker.css"
+
+              
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/ui/widgets/datepicker.js"
+              
             ]
           },
           "configurations": {

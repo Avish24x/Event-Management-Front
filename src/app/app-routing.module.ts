@@ -12,11 +12,22 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { FinanceComponent } from './components/financial/finance.component';
+import { CommunicationComponent } from './components/communication/communication.component';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
+import { UserguideComponent } from './components/userguide/userguide.component';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
+
+
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'sign up', component: SignUpComponent},
-  {path:'navbar', component: NavbarComponent},
+  // {path:'navbar', component: NavbarComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'analytics', component:AnalyticsComponent},
   {path: 'events', component:EventsComponent},
@@ -25,15 +36,24 @@ const routes: Routes = [
   {path: 'reports', component:ReportsComponent},
   {path: 'notification', component:NotificationComponent},
   {path: 'settings', component:SettingsComponent},
-  {path: 'logout', component:LogoutComponent}
+  {path: 'logout', component:LogoutComponent},
+  {path: 'event-display', component:EventDisplayComponent},
 
+  {path: 'navbar', component:NavbarComponent},
 
-
-
+  {path: 'finance', component:FinanceComponent},
+  {path: 'communication', component:CommunicationComponent},
+  {path: 'pagenotfound', component:PagenotfoundComponent},
+  {path: 'myprofile', component:MyprofileComponent},
+  {path: 'testsidenavbar', component:TestsidenavbarComponent},
+  {path: 'userguide', component:UserguideComponent},
+  { path: 'chatbox', component: ChatboxComponent },
+  {path: '', pathMatch: 'full', redirectTo: '/events'},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }
