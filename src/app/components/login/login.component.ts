@@ -8,8 +8,8 @@ declare var $: any;
 
 // Custom validator function
 export function containsSpecialCharacter(control: AbstractControl): { [key: string]: boolean } | null {
-  // Add your desired special characters to the regular expression
-  const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+  const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;  
 
   if (!specialCharacterRegex.test(control.value)) {
     return { 'specialCharacter': true };
@@ -44,6 +44,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
+
       console.log('Login Form: ', this.loginForm?.value);
       this.apiService
       .request('login', 'post', this.loginForm?.value)
@@ -54,6 +55,10 @@ export class LoginComponent {
         this.router.navigate(['/events']);
        }
       })
+
+      // Open OTP modal when login form is submitted
+      $('#otpModal').modal('show');
+
     } else {
       console.log('Form has validation errors');
       this.loginForm.get('password')?.markAsTouched();
@@ -61,6 +66,13 @@ export class LoginComponent {
   }
 
   verifyOTP() {
-    console.log('OTP verification successful!');
+    if (this.otpForm.valid) {
+      console.log('OTP verification successful!');
+      // Close OTP modal after OTP verification
+      $('#otpModal').modal('hide');
+      // Proceed with login or further actions
+    } else {
+      console.log('OTP form has validation errors');
+    }
   }
 }

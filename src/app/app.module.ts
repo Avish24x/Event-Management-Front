@@ -35,7 +35,12 @@ import { UserguideComponent } from './components/userguide/userguide.component';
 import { EventsComponent } from './components/events/events.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
+
 import { JwtModule } from '@auth0/angular-jwt';
+=======
+import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +68,8 @@ import { JwtModule } from '@auth0/angular-jwt';
     TestsidenavbarComponent,
     UserguideComponent,
     ChatboxComponent,
+    EventRegistrationComponent,
+    ForgetpasswordComponent,
     
   ],
   imports: [

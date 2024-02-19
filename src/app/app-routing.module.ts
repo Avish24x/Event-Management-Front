@@ -21,6 +21,8 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { TestsidenavbarComponent } from './components/testsidenavbar/testsidenavbar.component';
 import { UserguideComponent } from './components/userguide/userguide.component';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 
 
 
@@ -48,6 +50,10 @@ const routes: Routes = [
   {path: 'testsidenavbar', component:TestsidenavbarComponent},
   {path: 'userguide', component:UserguideComponent},
   { path: 'chatbox', component: ChatboxComponent },
+  { path: 'event-registration', component: EventRegistrationComponent },
+  { path: 'forgetpassword', component: ForgetpasswordComponent },
+
+
   {path: '', pathMatch: 'full', redirectTo: '/events'},
 ];
 

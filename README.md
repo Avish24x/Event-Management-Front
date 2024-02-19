@@ -1,4 +1,4 @@
-\# SD Worx Event Management System
+\# SD Worx Event Management System 2024
 
 Welcome to the SD Worx Event Management System! This system is designed to streamline the process of managing events within the SD Worx organization.
 
