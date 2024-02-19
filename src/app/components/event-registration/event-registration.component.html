@@ -1,59 +1,59 @@
-<div class="container">
-
-
-<form role="form" (ngSubmit)="submitForm()" [class.was-validated]="submitted">
-    <h6 class="form-heading">Identity</h6>
+<div class="container" style="padding-left: calc(var(--bs-gutter-x) * 4.5);">
+  <form role="form" (ngSubmit)="submitForm()" [class.was-validated]="submitted">
+    <h6 class="form-heading">Event Details</h6>
     <div class="form-group">
-      <label class="form-label" for="txtFirstName">Event name</label>
-      <input class="form-control" id="txtFirstName" type="text" placeholder="Event name.." required />
-    </div>
-    <div class="form-group-spacer">
-      <label class="form-label" for="txtLastName">Event Description</label>
-      <input class="form-control" id="txtLastName" type="text" placeholder="Event Description.." required />
-    </div>
-    <h6 class="form-heading">Event</h6>
-    <div class="form-group">
-      <label class="form-label" for="typeOfContracts">Event Type</label>
-      <ng-select
-        labelForId="typeOfContracts"
-        name="typeOfContracts"
-        placeholder="Select type of contract"
-        [(ngModel)]="selectedContract"
-        
-        bindValue="id"
-        bindLabel="name"
-      >
-      </ng-select>
+      <label class="form-label" for="eventName">Event Name</label>
+      <input class="form-control" id="eventName" type="text" placeholder="Enter Event Name" required />
     </div>
     <div class="form-group">
-      <label class="form-label" for="dateStartDate">Start date</label>
-      <div class="input-group" style="width: 275px">
-        <input
-          class="form-control"
-          placeholder="yyyy-mm-dd"
-          name="dp"
-          [(ngModel)]="fromDate"
-          ngbDatepicker
-          #d="ngbDatepicker"
-        />
-        <button class="btn" (click)="d.toggle()" type="button" id="dateStartDate">
-          <i class="icons8-o-calendar"></i>
-        </button>
-      </div>
+      <label class="form-label" for="eventDescription">Event Description</label>
+      <textarea class="form-control" id="eventDescription" rows="3" placeholder="Enter Event Description" required></textarea>
     </div>
-    <div class="form-group-spacer">
-      <label class="form-label" for="chkWorkRegime">Event Type</label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="chkWorkRegime" id="workFulltime" checked />
-        <label class="form-check-label" for="workFulltime">Virtual</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="chkWorkRegime" id="workParttime" />
-        <label class="form-check-label" for="workParttime">On-Site</label>
-      </div>
+    <div class="form-group">
+      <label class="form-label" for="startDate">Start Date</label>
+      <input class="form-control" id="startDate" type="date" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="startTime">Start Time</label>
+      <input class="form-control" id="startTime" type="time" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="endDate">End Date</label>
+      <input class="form-control" id="endDate" type="date" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="endTime">End Time</label>
+      <input class="form-control" id="endTime" type="time" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="eventStatus">Event Status</label>
+      <select class="form-select" id="eventStatus" required>
+        <option value="">Select Event Status</option>
+        <option value="scheduled">Scheduled</option>
+        <option value="ongoing">Ongoing</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="eventType">Event Type</label>
+      <select class="form-select" id="eventType" required>
+        <option value="">Select Event Type</option>
+        <option value="onsite">Onsite</option>
+        <option value="virtual">Virtual</option>
+        <option value="hybrid">Hybrid</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="locationMap">Location Map</label>
+      <input class="form-control" id="locationMap" type="text" placeholder="Enter Location Map URL" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="attachments">Attachments</label>
+      <input class="form-control" id="attachments" type="file" accept=".jpg, .jpeg, .png, .pdf, .xls, .xlsx, .doc, .docx" multiple />
     </div>
     <div class="d-flex gap-2">
       <button type="submit" class="btn btn-primary">Save</button>
       <button type="reset" class="btn btn-secondary">Cancel</button>
     </div>
-</form>
+  </form>
+</div>

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-event-registration',
   templateUrl: './event-registration.component.html',
 })
-export class EventRegistrationComponent {
+export class EventRegistrationComponent implements OnInit {
   fromDate!: NgbDateStruct;
   typeOfContracts = [
     { id: 'P', name: 'Permanent' },
@@ -15,8 +15,15 @@ export class EventRegistrationComponent {
   selectedContract = 'P';
   submitted: boolean = false;
 
-  constructor(calendar: NgbCalendar) {
-    this.fromDate = calendar.getToday();
+  constructor(private calendar: NgbCalendar) {}
+
+  ngOnInit(): void {
+    this.fromDate = this.calendar.getToday();
+    // Add margin dynamically
+    const container = document.querySelector('.container');
+    if (container) {
+      container.classList.add('custom-margin');
+    }
   }
 
   submitForm(): void {
